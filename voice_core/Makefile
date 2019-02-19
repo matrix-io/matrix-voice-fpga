@@ -46,7 +46,6 @@ SRC             = $(DESIGN).v \
                   rtl/wb_bram/bram.v \
                   rtl/wb_conbus/conbus_arb.v \
                   rtl/wb_conbus/conbus.v \
-                  $(MIC_SRC) \
                   $(GPIO_SRC) \
                   $(DAC_SRC) \
                   $(EVERLOOP_SRC)
