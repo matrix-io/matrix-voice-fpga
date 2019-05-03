@@ -370,7 +370,7 @@ module system #(
 //---------------------------------------------------------------------------
 // Microphone Array
 //---------------------------------------------------------------------------
-/*  wb_mic_array #(
+  wb_mic_array #(
     .SYS_FREQ_HZ     (SYS_FREQ_HZ     ),
     .ADDR_WIDTH      (ADDR_WIDTH      ),
     .DATA_WIDTH      (DATA_WIDTH      ),
@@ -398,7 +398,6 @@ module system #(
     .sample_rate(mic_sample_rate),
     .data_gain  (mic_data_gain  )
   );
-  */
 
 //---------------------------------------------------------------------------
 // Everloop

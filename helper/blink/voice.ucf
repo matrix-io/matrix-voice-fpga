@@ -1,0 +1,77 @@
+######################################################
+######################################################
+## These constraints are for MATRIX-CREATOR         ##
+######################################################
+######################################################
+
+######################
+# Timing Constraints #
+######################
+
+##### Grouping Constraints #####
+NET clk_50 TNM_NET = clk50_grp;
+
+##### Clock Period Constraints #####
+TIMESPEC TS_PER_CLK50 = PERIOD "clk50_grp" 20.0 ns HIGH 50%;
+
+##### Grouping Constraints #####
+#NET sck TNM_NET = sck_grp;
+
+##### Clock Period Constraints #####
+#TIMESPEC TS_PER_SCK = PERIOD "sck_grp" 20.0 ns HIGH 50%;
+
+
+#######################
+# Pin LOC Constraints #
+#######################
+
+#OSC
+NET "clk_50"       LOC = "T7" | IOSTANDARD = LVCMOS33;
+
+#LED
+NET "debug_led"     LOC = "R2" | IOSTANDARD = LVCMOS33 | DRIVE = 24;        
+#NET "everloop_ctl"  LOC = "P112"| IOSTANDARD = LVCMOS33;
+
+NET "resetn"        LOC = "M1" | IOSTANDARD = LVCMOS33 | PULLDOWN; #RPI_GPIO12
+
+#NET "sck"           LOC = "P74" | IOSTANDARD = LVCMOS33;        
+#NET "mosi"          LOC = "P80" | IOSTANDARD = LVCMOS33;        
+#NET "miso"          LOC = "P79" | IOSTANDARD = LVCMOS33;        
+#NET "ss"            LOC = "P79" | IOSTANDARD = LVCMOS33;        
+
+#NET "IRQ_MIC"       LOC = "P139" | IOSTANDARD = LVCMOS33; #RPI_GPIO6
+
+#######################
+# MIC ARRAY           #
+#######################
+
+#NET "pdm_data<0>" LOC = "P118" | IOSTANDARD = LVCMOS33;
+#NET "pdm_data<1>" LOC = "P116" | IOSTANDARD = LVCMOS33;
+#NET "pdm_data<2>" LOC = "P115" | IOSTANDARD = LVCMOS33;
+#NET "pdm_data<3>" LOC = "P44" | IOSTANDARD = LVCMOS33;
+#NET "pdm_data<4>" LOC = "P119" | IOSTANDARD = LVCMOS33;
+#NET "pdm_data<5>" LOC = "P117" | IOSTANDARD = LVCMOS33;
+#NET "pdm_data<6>" LOC = "P50" | IOSTANDARD = LVCMOS33;
+#NET "pdm_clk"     LOC = "P111" | IOSTANDARD = LVCMOS33;
+
+#######################
+#    EXP-CONN         #
+#######################
+
+#NET "gpio_io<15>" LOC="P102" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<14>" LOC="P101" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<13>" LOC="P99" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<12>" LOC="P98" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<11>" LOC="P95" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<10>" LOC="P94" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<9>" LOC="P93" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<8>" LOC="P92" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<7>" LOC="P88" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<6>" LOC="P85" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<5>" LOC="P83" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<4>" LOC="P82" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<3>" LOC="P81" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<2>" LOC="P80" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<1>" LOC="P79" | IOSTANDARD = LVCMOS33;
+#NET "gpio_io<0>" LOC="P78" | IOSTANDARD = LVCMOS33;
+
