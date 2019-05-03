@@ -76,15 +76,15 @@ NET "dac_hp_nspk"       LOC = "D1"  | IOSTANDARD = LVCMOS33;
 #######################
 # MIC ARRAY           #
 #######################
-#NET "pdm_clk"      LOC = "B5"  | IOSTANDARD = LVCMOS33;
-#NET "pdm_data<0>"  LOC = "E6"  | IOSTANDARD = LVCMOS33;
-#NET "pdm_data<1>"  LOC = "B8"  | IOSTANDARD = LVCMOS33;
-#NET "pdm_data<2>"  LOC = "A8"  | IOSTANDARD = LVCMOS33;
-#NET "pdm_data<3>"  LOC = "C7"  | IOSTANDARD = LVCMOS33;
-#NET "pdm_data<4>"  LOC = "A7"  | IOSTANDARD = LVCMOS33;
-#NET "pdm_data<5>"  LOC = "A6"  | IOSTANDARD = LVCMOS33;
-#NET "pdm_data<6>"  LOC = "B6"  | IOSTANDARD = LVCMOS33;
-#NET "pdm_data<7>"  LOC = "A5"  | IOSTANDARD = LVCMOS33;
+NET "pdm_clk"      LOC = "B5"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<0>"  LOC = "E6"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<1>"  LOC = "B8"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<2>"  LOC = "A8"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<3>"  LOC = "C7"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<4>"  LOC = "A7"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<5>"  LOC = "A6"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<6>"  LOC = "B6"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<7>"  LOC = "A5"  | IOSTANDARD = LVCMOS33;
 NET "mic_irq<0>"   LOC = "R7"  | IOSTANDARD = LVCMOS33; #RPI_GPIO6
 NET "mic_irq<1>"   LOC = "H4"  | IOSTANDARD = LVCMOS33; #ESP_IO5
 

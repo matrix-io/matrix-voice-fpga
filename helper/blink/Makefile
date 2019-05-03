@@ -4,54 +4,18 @@ PINS            = $(UCF).ucf
 DEVICE          = xc6slx9-2ftg256
 BGFLAGS         = -g TdoPin:PULLNONE -g DonePin:PULLUP \
                   -g CRC:enable -g StartUpClk:CCLK
-ISE_SIM_ROOT		= /opt/Xilinx/14.7/ISE_DS/ISE/verilog/src
+
 XILINXCADROOT   = /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin/ise
 SIMGEN_OPTIONS  = -p $(FPGA_ARCH) -lang $(LANGUAGE)
 IVERILOG        = iverilog
 
-GPIO_SRC        = rtl/wb_gpio/wb_gpio.v \
-                  rtl/wb_gpio/pwm.v \
-                  rtl/wb_gpio/core_clk.v \
-                  rtl/wb_gpio/timer.v \
-                  rtl/wb_gpio/timer_core.v \
-                  rtl/wb_gpio/mux_io.v \
-                  rtl/wb_gpio/single_mux.v
 
-MIC_SRC         = rtl/wb_mic_array/cic_comb.v \
-                  rtl/wb_mic_array/cic_sync.v \
-                  rtl/wb_mic_array/cic_int.v \
-                  rtl/wb_mic_array/cic.v \
-                  rtl/wb_mic_array/mic_array.v \
-                  rtl/wb_mic_array/mic_array_buffer.v \
-                  rtl/wb_mic_array/cic_op_fsm.v \
-                  rtl/wb_mic_array/fir.v \
-                  rtl/wb_mic_array/fir_pipe_fsm.v \
-                  rtl/wb_mic_array/wb_mic_array.v 
+SRC             = $(DESIGN).v 
 
-EVERLOOP_SRC    = rtl/wb_everloop/everloop_bram.v \
-                  rtl/wb_everloop/everloop.v \
-                  rtl/wb_everloop/everloop_fsm.v \
-                  rtl/wb_everloop/wb_everloop.v
-
-DAC_SRC			    = rtl/wb_dac/wb_dac.v \
-                  rtl/wb_dac/dac.v \
-                  rtl/wb_dac/dac_fsm.v \
-                  rtl/wb_dac/dac_fifo.v \
-                  rtl/wb_dac/dac_control.v
-
-SRC             = $(DESIGN).v \
-                  voice_dcm.v \
-                  rtl/wb_spi_slave/wb_spi_slave.v \
-                  rtl/wb_spi_slave/spi_slave.v \
-                  rtl/wb_bram/bram.v \
-                  rtl/wb_conbus/conbus_arb.v \
-                  rtl/wb_conbus/conbus.v \
-                  $(MIC_SRC) \
-                  $(GPIO_SRC) \
-                  $(DAC_SRC) \
-                  $(EVERLOOP_SRC)
-
-SIM_SRC = $(DESIGN)_TB.v 
+SIM_SRC = $(DESIGN)_TB.v          \
+          ../thrid_party/unisims/DCM_SP.v     \
+          ../thrid_party/unisims/BUFG.v   \
+          ../thrid_party/unisims/IBUFG.v
 
  
 all:            bits
@@ -124,7 +88,7 @@ postsim: build/project.ngc
 
 
 iversim: build/project.src
-	$(IVERILOG) -g2012 -gno-io-range-error -o simulation/$(DESIGN)_TB.vvp $(VINCDIR) $(SRC) $(SIM_SRC) -s $(DESIGN)_TB -y $(ISE_SIM_ROOT) -y $(ISE_SIM_ROOT)/unisims -y $(ISE_SIM_ROOT)/unimacro -y $(ISE_SIM_ROOT)/simprims
+	$(IVERILOG) -gno-io-range-error -o simulation/$(DESIGN)_TB.vvp $(VINCDIR) $(SRC) $(SIM_SRC) -s $(DESIGN)_TB
 	vvp simulation/$(DESIGN)_TB.vvp; mv $(DESIGN)_TB.vcd simulation/
 	gtkwave simulation/$(DESIGN)_TB.vcd&
 
