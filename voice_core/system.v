@@ -50,6 +50,9 @@ module system #(
   input                   rpi_ss      ,
   input                   rpi_sck     ,
   output                  rpi_miso    ,
+  /* RASPBERRY's I2C interface */
+  inout                  rpi_scl      ,
+  inout                  rpi_sda      ,
   /* ESP SPI interface */
   input                   esp_mosi    ,
   input                   esp_ss      ,
@@ -84,6 +87,9 @@ module system #(
   assign PI_RX       = ESP_TX;
   assign EN_ESP      = count[1]&GPIO_25?1'bZ:1'b0;
   assign EN_PROG_ESP = count[1]&GPIO_24?1'bZ:1'b0;
+
+  assign rpi_scl     = 1'bz;
+  assign rpi_sda     = 1'bz;
 
   reg[1:0] count;
 

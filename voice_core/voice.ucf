@@ -42,6 +42,12 @@ NET "rpi_miso"     LOC = "M9"  | IOSTANDARD = LVCMOS33;
 NET "rpi_ss"       LOC = "N9"  | IOSTANDARD = LVCMOS33;
 
 #######################
+# RPi I2C BUS
+#######################
+NET "rpi_scl"     LOC = "C13"  | IOSTANDARD = LVCMOS33; #SCL_FPGA
+NET "rpi_sda"     LOC = "C11"  | IOSTANDARD = LVCMOS33; #SDA_FPGA
+
+#######################
 # ESP32 SPI BUS
 #######################
 NET "esp_sck"      LOC = "B3"  | IOSTANDARD = LVCMOS33; #ESP_IO32
