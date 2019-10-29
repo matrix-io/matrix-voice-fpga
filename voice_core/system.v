@@ -85,11 +85,6 @@ module system #(
   /* Debug */
 );
 
-  // Set up component SPI
-  assign component_cs = rpi_ss1;
-  assign component_clk = rpi_sck;
-  assign component_mosi = rpi_mosi;
-
   assign ESP_RX      = PI_TX;
   assign PI_RX       = ESP_TX;
   assign EN_ESP      = count[1]&GPIO_25?1'bZ:1'b0;
@@ -108,6 +103,11 @@ module system #(
   assign mic_irq[1] = mic_array_irq;
 
   assign led_debug = 1'b0;
+
+  // Set up component SPI
+  assign component_cs = rpi_ss1;
+  assign component_clk = rpi_sck;
+  assign component_mosi = rpi_mosi;
 
 //------------------------------------------------------------------
 // DCM Logic
