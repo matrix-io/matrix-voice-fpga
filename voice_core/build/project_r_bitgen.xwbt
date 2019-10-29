@@ -1,0 +1,7 @@
+INFILE=/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/build/project_r.ncd
+OUTFILE=/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/build/project_r.bit
+FAMILY=Spartan6
+PART=xc6slx9-2ftg256
+WORKINGDIR=/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/build
+LICENSE=WebPack
+USER_INFO=211672782_0_0_713

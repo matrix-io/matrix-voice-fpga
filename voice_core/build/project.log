@@ -1,0 +1,2444 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "project.src"
+Input Format                       : mixed
+
+---- Target Parameters
+Target Device                      : xc6slx9-2ftg256
+Output File Name                   : "project.ngc"
+Output Format                      : NGC
+
+---- Source Options
+Top Module Name                    : system
+Automatic Register Balancing       : yes
+
+---- General Options
+Optimization Goal                  : Area
+Optimization Effort                : 2
+RTL Output                         : yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" into library work
+Parsing module <system>.
+WARNING:HDLCompiler:751 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" Line 344: Redeclaration of ansi port dac_mute is not allowed
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/voice_dcm.v" into library work
+Parsing module <creator_dcm>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_spi_slave/wb_spi_slave.v" into library work
+Parsing module <wb_spi_slave>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_spi_slave/spi_slave.v" into library work
+Parsing module <spi_slave>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_bram/bram.v" into library work
+Parsing module <wb_bram>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_conbus/conbus_arb.v" into library work
+Parsing module <conbus_arb>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_conbus/conbus.v" into library work
+Parsing module <conbus>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/cic_comb.v" into library work
+Parsing module <cic_comb>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/cic_sync.v" into library work
+Parsing module <cic_sync>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/cic_int.v" into library work
+Parsing module <cic_int>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/cic.v" into library work
+Parsing module <cic>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/mic_array.v" into library work
+Parsing module <mic_array>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/mic_array_buffer.v" into library work
+Parsing module <mic_array_buffer>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/cic_op_fsm.v" into library work
+Parsing module <cic_op_fsm>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/fir.v" into library work
+Parsing module <mic_fir>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/fir_pipe_fsm.v" into library work
+Parsing module <fir_pipe_fsm>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/wb_mic_array.v" into library work
+Parsing module <wb_mic_array>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" into library work
+Parsing module <wb_gpio>.
+INFO:HDLCompiler:693 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 39. parameter declaration becomes local in wb_gpio with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 41. parameter declaration becomes local in wb_gpio with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 42. parameter declaration becomes local in wb_gpio with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 43. parameter declaration becomes local in wb_gpio with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 45. parameter declaration becomes local in wb_gpio with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 46. parameter declaration becomes local in wb_gpio with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 47. parameter declaration becomes local in wb_gpio with formal parameter declaration list
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/pwm.v" into library work
+Parsing module <pwm>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/core_clk.v" into library work
+Parsing module <core_clk>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/timer.v" into library work
+Parsing module <timer>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/timer_core.v" into library work
+Parsing module <timer_core>.
+INFO:HDLCompiler:693 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/timer_core.v" Line 65. parameter declaration becomes local in timer_core with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/timer_core.v" Line 66. parameter declaration becomes local in timer_core with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/timer_core.v" Line 67. parameter declaration becomes local in timer_core with formal parameter declaration list
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/mux_io.v" into library work
+Parsing module <mux_io>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/single_mux.v" into library work
+Parsing module <single_mux>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/wb_dac.v" into library work
+Parsing module <wb_dac>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac.v" into library work
+Parsing module <dac>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac_fsm.v" into library work
+Parsing module <dac_fsm>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac_fifo.v" into library work
+Parsing module <dac_fifo>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac_control.v" into library work
+Parsing module <dac_control>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/everloop_bram.v" into library work
+Parsing module <everloop_ram>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/everloop.v" into library work
+Parsing module <everloop>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/everloop_fsm.v" into library work
+Parsing module <everloop_fsm>.
+Analyzing Verilog file "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/wb_everloop.v" into library work
+Parsing module <wb_everloop>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:1016 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" Line 202: Port s0_cti_o is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" Line 415: Port led_fb is not connected to this instance
+
+Elaborating module <system>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" Line 34: Result of 64-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" Line 35: Result of 64-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" Line 36: Result of 64-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" Line 102: Result of 3-bit expression is truncated to fit in 2-bit target.
+
+Elaborating module <creator_dcm(CLKFX_DIVIDE=1,CLKFX_MULTIPLY=3)>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=1,CLKFX_MULTIPLY=3,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=20.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
+WARNING:HDLCompiler:1127 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/voice_dcm.v" Line 75: Assignment to locked_int ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/voice_dcm.v" Line 76: Assignment to status_int ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
+WARNING:HDLCompiler:1127 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" Line 123: Assignment to nclk ignored, since the identifier is never used
+
+Elaborating module <conbus(ADDR_WIDTH=15,DATA_WIDTH=16,s_addr_w=3,s0_addr=3'b0,s1_addr=3'b010,s2_addr=3'b011,s3_addr=3'b110,s4_addr=3'b100)>.
+
+Elaborating module <conbus_arb>.
+WARNING:HDLCompiler:1127 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" Line 279: Assignment to gpio0_sel ignored, since the identifier is never used
+
+Elaborating module <wb_spi_slave(ADDR_WIDTH=15,DATA_WIDTH=16)>.
+
+Elaborating module <spi_slave(DATA_WIDTH=16)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_spi_slave/spi_slave.v" Line 62: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:1127 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_spi_slave/wb_spi_slave.v" Line 146: Assignment to rd ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_spi_slave/wb_spi_slave.v" Line 183: Result of 16-bit expression is truncated to fit in 15-bit target.
+
+Elaborating module <wb_bram(ADDR_WIDTH=15,DATA_WIDTH=16,VERSION=64'b1011101011010010011000000011001000000000000010100000000000000001,CLKFX_DIVIDE=1,CLKFX_MULTIPLY=3,DECIMATION_RATIO=16'b010111010,DATA_GAIN_DEFAULT=16'b011,VOLUMEN_PWM_FREQ=5000000,VOLUMEN_INIT=32'sb01111,BIT_FRAME_N=177)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_bram/bram.v" Line 124: Result of 5-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <wb_mic_array(SYS_FREQ_HZ=150000000,ADDR_WIDTH=15,DATA_WIDTH=16,PDM_FREQ_HZ=3000000,PDM_RATIO=16'b0110001,PDM_READING_TIME=16'b011100)>.
+WARNING:HDLCompiler:1016 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/mic_array.v" Line 68: Port cic_finish is not connected to this instance
+
+Elaborating module <mic_array(SYS_FREQ_HZ=150000000,DATA_WIDTH=16,ADDR_WIDTH=15,PDM_FREQ_HZ=3000000,PDM_READING_TIME=16'b011100,PDM_RATIO=16'b0110001,FIR_TAP_WIDTH=16,FIR_TAP=128,FIR_TAP_ADDR=7)>.
+
+Elaborating module <cic_sync(SYS_FREQ_HZ=150000000,CHANNELS=8,DATA_WIDTH=16,PDM_FREQ_HZ=3000000,PDM_READING_TIME=16'b011100,PDM_RATIO=16'b0110001)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/cic_sync.v" Line 142: Result of 17-bit expression is truncated to fit in 16-bit target.
+
+Elaborating module <cic(STAGES=3,WIDTH=23,CHANNELS=8)>.
+
+Elaborating module <cic_op_fsm(WIDTH=23,CHANNELS=8)>.
+
+Elaborating module <cic_int(WIDTH=23,CHANNELS=8)>.
+
+Elaborating module <cic_comb(WIDTH=23,CHANNELS=8)>.
+
+Elaborating module <mic_fir(DATA_WIDTH=16,CHANNELS=8,CHANNELS_WIDTH=3,FIR_TAP_WIDTH=16,FIR_TAP=128,FIR_TAP_ADDR=7)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/fir.v" Line 56: Result of 11-bit expression is truncated to fit in 10-bit target.
+
+Elaborating module <fir_pipe_fsm(CHANNELS=8,FIR_TAP=128,CHANNELS_WIDTH=3)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/fir_pipe_fsm.v" Line 82: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/fir_pipe_fsm.v" Line 91: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/fir.v" Line 96: Result of 32-bit expression is truncated to fit in 7-bit target.
+
+Elaborating module <mic_array_buffer(ADDR_WIDTH=10,DATA_WIDTH=16)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/mic_array.v" Line 136: Result of 14-bit expression is truncated to fit in 13-bit target.
+WARNING:HDLCompiler:91 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/mic_array.v" Line 145: Signal <data_gain> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/mic_array.v" Line 164: Signal <data_gain> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/mic_array.v" Line 181: Signal <nof> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/mic_array.v" Line 184: Signal <data_gain> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+
+Elaborating module <mic_array_buffer(ADDR_WIDTH=13,DATA_WIDTH=16)>.
+WARNING:HDLCompiler:552 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/mic_array.v" Line 75: Input port cic_finish is not connected on this instance
+
+Elaborating module <mic_array_buffer(ADDR_WIDTH=7,DATA_WIDTH=16)>.
+WARNING:HDLCompiler:189 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/wb_mic_array.v" Line 113: Size mismatch in connection of port <adr_a>. Formal port size is 7-bit while actual signal size is 15-bit.
+
+Elaborating module <wb_everloop(MEM_FILE_NAME="rtl/wb_everloop/image           .ram",SYS_FREQ_HZ=150000000,ADDR_WIDTH=15,DATA_WIDTH=16,N_LEDS=16'b010010)>.
+
+Elaborating module <everloop(SYS_FREQ_HZ=150000000,DATA_WIDTH=16)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/everloop.v" Line 26: Result of 64-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/everloop.v" Line 27: Result of 64-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/everloop.v" Line 28: Result of 64-bit expression is truncated to fit in 9-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/everloop.v" Line 54: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/everloop.v" Line 63: Result of 9-bit expression is truncated to fit in 8-bit target.
+
+Elaborating module <everloop_ram(ADDR_WIDTH=8,DATA_WIDTH=16,MEM_FILE_NAME="rtl/wb_everloop/image           .ram")>.
+
+Elaborating module <everloop_fsm(SYS_FREQ_HZ=150000000,N_LEDS=16'b010010)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/everloop_fsm.v" Line 51: Result of 15-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/everloop_fsm.v" Line 60: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:1016 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/wb_dac.v" Line 99: Port read_ack is not connected to this instance
+
+Elaborating module <wb_dac(SYS_FREQ_HZ=150000000,DATA_WIDTH=16,ADDR_WIDTH=15,VOLUMEN_PWM_FREQ=5000000)>.
+
+Elaborating module <dac(DATA_WIDTH=16)>.
+
+Elaborating module <dac_fifo(ADDR_WIDTH=12,DATA_WIDTH=16)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac_fifo.v" Line 59: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac_fifo.v" Line 67: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac_fifo.v" Line 77: Result of 32-bit expression is truncated to fit in 12-bit target.
+
+Elaborating module <dac_fsm(DATA_WIDTH=16,SAMP_DAC=32'b010010)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac_fsm.v" Line 54: Result of 17-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac_fsm.v" Line 62: Result of 17-bit expression is truncated to fit in 16-bit target.
+
+Elaborating module <dac_control(SYS_FREQ_HZ=150000000,DATA_WIDTH=16,PWM_FREQ=5000000)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac_control.v" Line 44: Result of 6-bit expression is truncated to fit in 5-bit target.
+
+Elaborating module <wb_gpio(ADDR_WIDTH=15,DATA_WIDTH=16,GPIO_WIDTH=13)>.
+
+Elaborating module <core_clk(PRESCALER=32'sb010000)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/core_clk.v" Line 36: Result of 17-bit expression is truncated to fit in 16-bit target.
+
+Elaborating module <pwm(CORE_WIDTH=4,PWM_COUNTER_WIDTH=16)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/pwm.v" Line 60: Result of 17-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:189 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 114: Size mismatch in connection of port <duty>. Formal port size is 65-bit while actual signal size is 64-bit.
+WARNING:HDLCompiler:189 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 114: Size mismatch in connection of port <duty>. Formal port size is 65-bit while actual signal size is 64-bit.
+WARNING:HDLCompiler:189 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 114: Size mismatch in connection of port <duty>. Formal port size is 65-bit while actual signal size is 64-bit.
+WARNING:HDLCompiler:189 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 114: Size mismatch in connection of port <duty>. Formal port size is 65-bit while actual signal size is 64-bit.
+
+Elaborating module <timer(CORE_WIDTH=4,TIMER_COUNTER_WIDTH=16)>.
+
+Elaborating module <timer_core(TIMER_COUNTER_WIDTH=16)>.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/timer_core.v" Line 52: Result of 17-bit expression is truncated to fit in 16-bit target.
+
+Elaborating module <mux_io>.
+
+Elaborating module <single_mux>.
+WARNING:HDLCompiler:189 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 145: Size mismatch in connection of port <sig2>. Formal port size is 13-bit while actual signal size is 16-bit.
+WARNING:HDLCompiler:189 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 148: Size mismatch in connection of port <sig1>. Formal port size is 13-bit while actual signal size is 16-bit.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 195: Result of 16-bit expression is truncated to fit in 13-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 196: Result of 16-bit expression is truncated to fit in 13-bit target.
+WARNING:HDLCompiler:413 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v" Line 198: Result of 16-bit expression is truncated to fit in 13-bit target.
+WARNING:HDLCompiler:552 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" Line 421: Input port led_fb is not connected on this instance
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <system>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v".
+        BOOTRAM_FILE = "rtl/wb_bram/image               .ram"
+        EVERLOOP_FILE = "rtl/wb_everloop/image           .ram"
+        ADDR_WIDTH = 15
+        DATA_WIDTH = 16
+        GPIO_WIDTH = 13
+        SYS_FREQ_HZ = 150000000
+        CLKFX_DIVIDE = 1
+        CLKFX_MULTIPLY = 3
+        VERSION = 64'b1011101011010010011000000011001000000000000010100000000000000001
+        OUT_FREQ_HZ = 16000
+        PDM_FREQ_HZ = 3000000
+        PDM_RATIO = 16'b0000000000110001
+        PDM_READING_TIME = 16'b0000000000011100
+        DECIMATION_RATIO = 16'b0000000010111010
+        DATA_GAIN_DEFAULT = 16'b0000000000000011
+        VOLUMEN_PWM_FREQ = 5000000
+        VOLUMEN_INIT = 15
+        BIT_FRAME_N = 177
+        N_LEDS = 16'b0000000000010010
+WARNING:Xst:2898 - Port 'led_fb', unconnected in block instance 'everloop0', is tied to GND.
+INFO:Xst:3210 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" line 120: Output port <nclk_out_200> of the instance <dcm> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" line 120: Output port <clk_out_25> of the instance <dcm> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" line 211: Output port <s0_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" line 211: Output port <s1_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" line 211: Output port <s2_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" line 211: Output port <s3_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" line 211: Output port <s4_cti_o> of the instance <conbus0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/system.v" line 211: Output port <s4_sel_o> of the instance <conbus0> is unconnected or connected to loadless signal.
+    Found 2-bit register for signal <count>.
+    Found 2-bit adder for signal <count[1]_GND_1_o_add_1_OUT> created at line 102.
+    Found 1-bit tristate buffer for signal <EN_ESP> created at line 95
+    Found 1-bit tristate buffer for signal <EN_PROG_ESP> created at line 96
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   2 Tristate(s).
+Unit <system> synthesized.
+
+Synthesizing Unit <creator_dcm>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/voice_dcm.v".
+        CLKFX_DIVIDE = 1
+        CLKFX_MULTIPLY = 3
+    Summary:
+	no macro.
+Unit <creator_dcm> synthesized.
+
+Synthesizing Unit <conbus>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_conbus/conbus.v".
+        ADDR_WIDTH = 15
+        DATA_WIDTH = 16
+        s_addr_w = 3
+        s0_addr = 3'b000
+        s1_addr = 3'b010
+        s2_addr = 3'b011
+        s3_addr = 3'b110
+        s4_addr = 3'b100
+    Summary:
+	no macro.
+Unit <conbus> synthesized.
+
+Synthesizing Unit <conbus_arb>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_conbus/conbus_arb.v".
+        grant0 = 2'b01
+        grant1 = 2'b10
+    Found 2-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 2                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | sys_clk (rising_edge)                          |
+    | Reset              | sys_rst (positive)                             |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 01                                             |
+    | Power Up State     | 01                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <conbus_arb> synthesized.
+
+Synthesizing Unit <wb_spi_slave>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_spi_slave/wb_spi_slave.v".
+        ADDR_WIDTH = 15
+        DATA_WIDTH = 16
+    Found 15-bit register for signal <addr_bus>.
+    Found 4-bit register for signal <state>.
+    Found 1-bit register for signal <rd_nwr>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 27                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | resetn (positive)                              |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 15-bit adder for signal <addr_bus[14]_GND_11_o_add_25_OUT> created at line 183.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <wb_spi_slave> synthesized.
+
+Synthesizing Unit <spi_slave>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_spi_slave/spi_slave.v".
+        DATA_WIDTH = 16
+    Found 5-bit register for signal <counter>.
+    Found 3-bit register for signal <state>.
+    Found 16-bit register for signal <data_bus_r>.
+    Found 16-bit register for signal <MISOr>.
+    Found 3-bit register for signal <SSELr>.
+    Found 2-bit register for signal <MOSIr>.
+    Found 3-bit register for signal <SCKr>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | resetn (positive)                              |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 5-bit adder for signal <counter[4]_GND_12_o_add_8_OUT> created at line 62.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  45 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <spi_slave> synthesized.
+
+Synthesizing Unit <wb_bram>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_bram/bram.v".
+        DATA_WIDTH = 16
+        ADDR_WIDTH = 15
+        CLKFX_DIVIDE = 1
+        CLKFX_MULTIPLY = 3
+        VERSION = 64'b1011101011010010011000000011001000000000000010100000000000000001
+        DECIMATION_RATIO = 16'b0000000010111010
+        DATA_GAIN_DEFAULT = 16'b0000000000000011
+        VOLUMEN_PWM_FREQ = 5000000
+        VOLUMEN_INIT = 15
+        BIT_FRAME_N = 177
+        MEM_ADDR_WIDTH = 8
+        DEPTH = 256
+WARNING:Xst:647 - Input <wb_adr_i<14:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_sel_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 256x16-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Found 4-bit register for signal <update_counter>.
+    Found 16-bit register for signal <mic_data_gain>.
+    Found 16-bit register for signal <dac_volumen_control>.
+    Found 16-bit register for signal <dac_bit_frame_number>.
+    Found 16-bit register for signal <mic_sample_rate>.
+    Found 1-bit register for signal <state>.
+    Found 1-bit register for signal <dac_mute>.
+    Found 1-bit register for signal <dac_hp_nspk>.
+    Found 1-bit register for signal <dac_fifo_flush>.
+    Found 16-bit register for signal <wb_dat_o>.
+    Found 16-bit register for signal <data_ram>.
+    Found 1-bit register for signal <wb_ack_o>.
+    Found 4-bit adder for signal <update_counter[3]_GND_13_o_add_6_OUT> created at line 124.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred 105 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <wb_bram> synthesized.
+
+Synthesizing Unit <wb_mic_array>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/wb_mic_array.v".
+        SYS_FREQ_HZ = 150000000
+        ADDR_WIDTH = 15
+        DATA_WIDTH = 16
+        PDM_FREQ_HZ = 3000000
+        PDM_RATIO = 16'b0000000000110001
+        PDM_READING_TIME = 16'b0000000000011100
+        FIR_TAP = 128
+        FIR_TAP_WIDTH = 16
+        FIR_TAP_ADDR = 7
+WARNING:Xst:647 - Input <wb_sel_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <wb_ack_o>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <wb_mic_array> synthesized.
+
+Synthesizing Unit <mic_array>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/mic_array.v".
+        SYS_FREQ_HZ = 150000000
+        PDM_FREQ_HZ = 3000000
+        PDM_READING_TIME = 16'b0000000000011100
+        DATA_WIDTH = 16
+        ADDR_WIDTH = 15
+        PDM_RATIO = 16'b0000000000110001
+        FIR_TAP_WIDTH = 16
+        FIR_TAP = 128
+        FIR_TAP_ADDR = 7
+        CIC_DATA_WIDTH = 23
+        STAGES = 3
+        ADDR_WIDTH_BUFFER = 13
+        CHANNELS = 8
+        CHANNELS_WIDTH = 3
+WARNING:Xst:2898 - Port 'cic_finish', unconnected in block instance 'cic_sync0', is tied to GND.
+WARNING:Xst:647 - Input <addr_out<14:12>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <out_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 13-bit register for signal <wr_addr>.
+    Found 13-bit adder for signal <wr_addr[12]_GND_16_o_add_0_OUT> created at line 136.
+    Found 5-bit subtractor for signal <GND_16_o_GND_16_o_sub_48_OUT<4:0>> created at line 184.
+    Found 45-bit shifter logical right for signal <n0087> created at line 184
+    Found 1-bit 13-to-1 multiplexer for signal <_n0122> created at line 143.
+    Found 1-bit 13-to-1 multiplexer for signal <_n0146> created at line 162.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  13 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Combinational logic shifter(s).
+Unit <mic_array> synthesized.
+
+Synthesizing Unit <cic_sync>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/cic_sync.v".
+        SYS_FREQ_HZ = 150000000
+        PDM_FREQ_HZ = 3000000
+        CHANNELS = 8
+        DATA_WIDTH = 16
+        PDM_READING_TIME = 16'b0000000000011100
+        PDM_RATIO = 16'b0000000000110001
+        COUNTER_WIDTH = 6
+        CHANNELS_WIDTH = 3
+WARNING:Xst:647 - Input <cic_finish> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <pdm_clk>.
+    Found 7-bit register for signal <sys_count>.
+    Found 16-bit register for signal <comb_count>.
+    Found 3-bit register for signal <state>.
+    Found finite state machine <FSM_3> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | resetn (positive)                              |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 7-bit adder for signal <sys_count[6]_GND_17_o_add_21_OUT> created at line 119.
+    Found 16-bit adder for signal <comb_count[15]_GND_17_o_add_25_OUT> created at line 142.
+    Found 16-bit comparator equal for signal <comb_condition> created at line 60
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  24 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <cic_sync> synthesized.
+
+Synthesizing Unit <cic>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/cic.v".
+        WIDTH = 23
+        STAGES = 3
+        CHANNELS = 8
+    Found 8-bit register for signal <pdm_data_reg>.
+    Found 1-bit 8-to-1 multiplexer for signal <channel[2]_pdm_data_reg[7]_Mux_2_o> created at line 64.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <cic> synthesized.
+
+Synthesizing Unit <cic_op_fsm>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/cic_op_fsm.v".
+        WIDTH = 23
+        CHANNELS = 8
+    Found 3-bit register for signal <state>.
+    Found 3-bit register for signal <channel>.
+    Found finite state machine <FSM_4> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | resetn (positive)                              |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit adder for signal <channel[2]_GND_20_o_add_0_OUT> created at line 43.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   3 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <cic_op_fsm> synthesized.
+
+Synthesizing Unit <cic_int>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/cic_int.v".
+        WIDTH = 23
+        CHANNELS = 8
+    Found 8x23-bit single-port RAM <Mram_accumulator> for signal <accumulator>.
+    Found 23-bit register for signal <data_out>.
+    Found 23-bit adder for signal <sum> created at line 41.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  23 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <cic_int> synthesized.
+
+Synthesizing Unit <cic_comb>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/cic_comb.v".
+        WIDTH = 23
+        CHANNELS = 8
+    Found 8x23-bit single-port RAM <Mram_data_in_prev> for signal <data_in_prev>.
+    Found 8x23-bit single-port RAM <Mram_data_out_prev> for signal <data_out_prev>.
+    Found 23-bit register for signal <prev>.
+    Found 23-bit register for signal <data_out>.
+    Found 23-bit subtractor for signal <diff> created at line 47.
+    Summary:
+	inferred   2 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  46 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <cic_comb> synthesized.
+
+Synthesizing Unit <mic_fir>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/fir.v".
+        DATA_WIDTH = 16
+        CHANNELS = 8
+        CHANNELS_WIDTH = 3
+        FIR_TAP_WIDTH = 16
+        FIR_TAP = 128
+        FIR_TAP_ADDR = 7
+        FIR_MEM_DATA_ADDR = 10
+WARNING:Xst:647 - Input <ce> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit register for signal <data_reg_c>.
+    Found 16-bit register for signal <data_reg_d>.
+    Found 10-bit register for signal <wr_data_addr>.
+    Found 1-bit register for signal <reset_tap_p1>.
+    Found 1-bit register for signal <write_data_p1>.
+    Found 1-bit register for signal <reset_tap_p2>.
+    Found 1-bit register for signal <write_data_p2>.
+    Found 10-bit adder for signal <wr_data_addr[9]_GND_23_o_add_1_OUT> created at line 56.
+    Found 8-bit adder for signal <n0054> created at line 96.
+    Found 16-bit adder for signal <data_reg_d[15]_data_reg_c[15]_add_11_OUT> created at line 154.
+    Found 7-bit subtractor for signal <read_pointer> created at line 95.
+    Found 16x16-bit multiplier for signal <factor_wire> created at line 130.
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred  46 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <mic_fir> synthesized.
+
+Synthesizing Unit <fir_pipe_fsm>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/fir_pipe_fsm.v".
+        CHANNELS = 8
+        CHANNELS_WIDTH = 3
+        FIR_TAP = 128
+        TAP_COUNT_WIDTH = 7
+    Found 3-bit register for signal <channel_count>.
+    Found 3-bit register for signal <state>.
+    Found 7-bit register for signal <tap_count>.
+    Found finite state machine <FSM_5> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | resetn (positive)                              |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 7-bit adder for signal <tap_count[6]_GND_24_o_add_7_OUT> created at line 82.
+    Found 3-bit adder for signal <channel_count[2]_GND_24_o_add_10_OUT> created at line 91.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <fir_pipe_fsm> synthesized.
+
+Synthesizing Unit <mic_array_buffer_1>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/mic_array_buffer.v".
+        ADDR_WIDTH = 10
+        DATA_WIDTH = 16
+    Found 1024x16-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Found 16-bit register for signal <dat_b>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  16 D-type flip-flop(s).
+Unit <mic_array_buffer_1> synthesized.
+
+Synthesizing Unit <mic_array_buffer_2>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/mic_array_buffer.v".
+        ADDR_WIDTH = 13
+        DATA_WIDTH = 16
+    Found 8192x16-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Found 16-bit register for signal <dat_b>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  16 D-type flip-flop(s).
+Unit <mic_array_buffer_2> synthesized.
+
+Synthesizing Unit <mic_array_buffer_3>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_mic_array/mic_array_buffer.v".
+        ADDR_WIDTH = 7
+        DATA_WIDTH = 16
+    Found 128x16-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Found 16-bit register for signal <dat_b>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  16 D-type flip-flop(s).
+Unit <mic_array_buffer_3> synthesized.
+
+Synthesizing Unit <wb_everloop>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/wb_everloop.v".
+        MEM_FILE_NAME = "rtl/wb_everloop/image           .ram"
+        SYS_FREQ_HZ = 150000000
+        DATA_WIDTH = 16
+        ADDR_WIDTH = 15
+        N_LEDS = 16'b0000000000010010
+        MEM_ADDR_WIDTH = 8
+WARNING:Xst:647 - Input <wb_sel_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_adr_i<14:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <led_fb> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <wb_dat_o> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <wb_everloop> synthesized.
+
+Synthesizing Unit <everloop>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/everloop.v".
+        SYS_FREQ_HZ = 150000000
+        DATA_WIDTH = 16
+        DATA_PERIOD = 833000
+        ZERO_HIGH_TIME = 300
+        ONE_HIGH_TIME = 600
+        DATA_PERIOD_COUNTER = 9'b010110100
+        ZERO_HIGH_COUNTER = 9'b000101101
+        ONE_HIGH_COUNTER = 9'b001011010
+    Found 8-bit register for signal <data_cnt>.
+    Found 8-bit register for signal <clk_cnt>.
+    Found 16-bit register for signal <data_register>.
+    Found 1-bit register for signal <shift_enable>.
+    Found 1-bit register for signal <everloop_control>.
+    Found 8-bit adder for signal <clk_cnt[7]_GND_30_o_add_1_OUT> created at line 54.
+    Found 8-bit adder for signal <data_cnt[7]_GND_30_o_add_5_OUT> created at line 63.
+    Found 8-bit comparator greater for signal <clk_cnt[7]_GND_30_o_LessThan_16_o> created at line 95
+    Found 8-bit comparator greater for signal <clk_cnt[7]_GND_30_o_LessThan_17_o> created at line 102
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  34 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   8 Multiplexer(s).
+Unit <everloop> synthesized.
+
+Synthesizing Unit <everloop_ram>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/everloop_bram.v".
+        MEM_FILE_NAME = "rtl/wb_everloop/image           .ram"
+        ADDR_WIDTH = 8
+        DATA_WIDTH = 16
+    Found 256x16-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Found 1-bit register for signal <ack_a>.
+    Found 16-bit register for signal <dat_b>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  17 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <everloop_ram> synthesized.
+
+Synthesizing Unit <everloop_fsm>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_everloop/everloop_fsm.v".
+        SYS_FREQ_HZ = 150000000
+        N_LEDS = 16'b0000000000010010
+        RESET_COUNTER = 12000
+    Found 8-bit register for signal <read_count>.
+    Found 3-bit register for signal <state>.
+    Found 14-bit register for signal <reset_count>.
+    Found finite state machine <FSM_6> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | resetn (positive)                              |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 14-bit adder for signal <reset_count[13]_GND_32_o_add_6_OUT> created at line 51.
+    Found 8-bit adder for signal <read_count[7]_GND_32_o_add_10_OUT> created at line 60.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  22 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <everloop_fsm> synthesized.
+
+Synthesizing Unit <wb_dac>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/wb_dac.v".
+        SYS_FREQ_HZ = 150000000
+        DATA_WIDTH = 16
+        ADDR_WIDTH = 15
+        VOLUMEN_PWM_FREQ = 5000000
+        FIFO_ADDR_SIZE = 11
+        OUT_DATA_FREQ = 4000000
+        SAMP_FREQ = 44100
+        SAMP_DAC = 32'b00000000000000000000000000010010
+WARNING:Xst:647 - Input <wb_sel_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_adr_i<10:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wb_adr_i<14:12>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/wb_dac.v" line 102: Output port <read_ack> of the instance <dac_fifo0> is unconnected or connected to loadless signal.
+    Found 16-bit register for signal <wb_dat_o>.
+    Found 1-bit register for signal <wb_ack>.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+Unit <wb_dac> synthesized.
+
+Synthesizing Unit <dac>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac.v".
+        DATA_WIDTH = 16
+    Found 18-bit register for signal <sigma_reg>.
+    Found 18-bit adder for signal <delta_add> created at line 58.
+    Found 18-bit adder for signal <sigma_add> created at line 59.
+    Found 1-bit tristate buffer for signal <dac_output> created at line 57
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  18 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Tristate(s).
+Unit <dac> synthesized.
+
+Synthesizing Unit <dac_fifo>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac_fifo.v".
+        ADDR_WIDTH = 12
+        DATA_WIDTH = 16
+        EMPTY_CONSTANT = 1024
+WARNING:Xst:653 - Signal <read_ack> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 4096x16-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Found 12-bit register for signal <write_pointer>.
+    Found 12-bit register for signal <read_pointer>.
+    Found 1-bit register for signal <write_ack>.
+    Found 16-bit register for signal <data_b>.
+    Found 16-bit register for signal <data_c>.
+    Found 12-bit subtractor for signal <write_pointer[11]_read_pointer[11]_sub_11_OUT> created at line 75.
+    Found 14-bit subtractor for signal <GND_36_o_GND_36_o_sub_13_OUT> created at line 77.
+    Found 12-bit adder for signal <read_pointer[11]_GND_36_o_add_1_OUT> created at line 59.
+    Found 12-bit adder for signal <write_pointer[11]_GND_36_o_add_5_OUT> created at line 67.
+    Found 32-bit adder for signal <n0041> created at line 77.
+    Found 12-bit comparator equal for signal <empty> created at line 53
+    Found 12-bit comparator greater for signal <read_pointer[11]_write_pointer[11]_LessThan_10_o> created at line 74
+    Found 12-bit comparator greater for signal <fifo_ready> created at line 81
+    Summary:
+	inferred   1 RAM(s).
+	inferred   5 Adder/Subtractor(s).
+	inferred  57 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <dac_fifo> synthesized.
+
+Synthesizing Unit <dac_fsm>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac_fsm.v".
+        DATA_WIDTH = 16
+        SAMP_DAC = 32'b00000000000000000000000000010010
+    Found 16-bit register for signal <sigma_count>.
+    Found 16-bit register for signal <dac_counter>.
+    Found 3-bit register for signal <state>.
+    Found finite state machine <FSM_7> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | resetn (positive)                              |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit adder for signal <dac_counter[15]_GND_37_o_add_0_OUT> created at line 54.
+    Found 16-bit adder for signal <sigma_count[15]_GND_37_o_add_3_OUT> created at line 62.
+    Found 16-bit comparator equal for signal <dac_complete> created at line 70
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  32 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <dac_fsm> synthesized.
+
+Synthesizing Unit <dac_control>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_dac/dac_control.v".
+        SYS_FREQ_HZ = 150000000
+        DATA_WIDTH = 16
+        PWM_FREQ = 5000000
+        PWM_COUNTER = 32'b00000000000000000000000000011110
+        COUNT_WIDTH = 5
+    Found 5-bit register for signal <counter>.
+    Found 5-bit adder for signal <counter[4]_GND_38_o_add_1_OUT> created at line 44.
+    Found 16-bit comparator greater for signal <dac_volumen> created at line 47
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   5 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <dac_control> synthesized.
+
+Synthesizing Unit <wb_gpio>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/wb_gpio.v".
+        ADDR_WIDTH = 15
+        DATA_WIDTH = 16
+        GPIO_WIDTH = 13
+WARNING:Xst:647 - Input <wb_adr_i<14:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 13-bit register for signal <gpio_dir>.
+    Found 13-bit register for signal <gpio_out>.
+    Found 13-bit register for signal <gpio_function>.
+    Found 16-bit register for signal <core_prescaler>.
+    Found 16-bit register for signal <timer_conf>.
+    Found 64-bit register for signal <n0095[63:0]>.
+    Found 256-bit register for signal <n0096[255:0]>.
+    Found 1-bit register for signal <core_clk_bank<1>>.
+    Found 1-bit register for signal <core_clk_bank<2>>.
+    Found 1-bit register for signal <core_clk_bank<3>>.
+    Found 1-bit register for signal <wb_ack_o>.
+    Found 1-bit register for signal <core_clk_bank<0>>.
+    Found 16-bit register for signal <wb_dat_o>.
+    Found 1-bit 16-to-1 multiplexer for signal <core_prescaler[3]_core_clk[15]_Mux_0_o> created at line 93.
+    Found 1-bit 16-to-1 multiplexer for signal <core_prescaler[7]_core_clk[15]_Mux_1_o> created at line 93.
+    Found 1-bit 16-to-1 multiplexer for signal <core_prescaler[11]_core_clk[15]_Mux_2_o> created at line 93.
+    Found 1-bit 16-to-1 multiplexer for signal <core_prescaler[15]_core_clk[15]_Mux_3_o> created at line 93.
+    Found 1-bit tristate buffer for signal <gpio_io<0>> created at line 77
+    Found 1-bit tristate buffer for signal <gpio_io<1>> created at line 77
+    Found 1-bit tristate buffer for signal <gpio_io<2>> created at line 77
+    Found 1-bit tristate buffer for signal <gpio_io<3>> created at line 77
+    Found 1-bit tristate buffer for signal <gpio_io<4>> created at line 77
+    Found 1-bit tristate buffer for signal <gpio_io<5>> created at line 77
+    Found 1-bit tristate buffer for signal <gpio_io<6>> created at line 77
+    Found 1-bit tristate buffer for signal <gpio_io<7>> created at line 77
+    Found 1-bit tristate buffer for signal <gpio_io<8>> created at line 77
+    Found 1-bit tristate buffer for signal <gpio_io<9>> created at line 77
+    Found 1-bit tristate buffer for signal <gpio_io<10>> created at line 77
+    Found 1-bit tristate buffer for signal <gpio_io<11>> created at line 77
+    Found 1-bit tristate buffer for signal <gpio_io<12>> created at line 77
+    Summary:
+	inferred 412 D-type flip-flop(s).
+	inferred   9 Multiplexer(s).
+	inferred  13 Tristate(s).
+Unit <wb_gpio> synthesized.
+
+Synthesizing Unit <core_clk>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/core_clk.v".
+        PRESCALER = 16
+    Found 16-bit register for signal <core_clk>.
+    Found 16-bit adder for signal <core_clk[15]_GND_53_o_add_0_OUT> created at line 36.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+Unit <core_clk> synthesized.
+
+Synthesizing Unit <pwm>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/pwm.v".
+        CORE_WIDTH = 4
+        PWM_COUNTER_WIDTH = 16
+WARNING:Xst:647 - Input <duty<64:64>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit register for signal <counter>.
+    Found 16-bit adder for signal <counter[15]_GND_54_o_add_5_OUT> created at line 60.
+    Found 16-bit comparator greater for signal <pwm<0>> created at line 45
+    Found 16-bit comparator greater for signal <pwm<1>> created at line 45
+    Found 16-bit comparator greater for signal <pwm<2>> created at line 45
+    Found 16-bit comparator greater for signal <pwm<3>> created at line 45
+    Found 16-bit comparator greater for signal <period[15]_counter[15]_LessThan_5_o> created at line 57
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   5 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <pwm> synthesized.
+
+Synthesizing Unit <timer>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/timer.v".
+        CORE_WIDTH = 4
+        TIMER_COUNTER_WIDTH = 16
+    Found 1-bit register for signal <rTimer_input<1>>.
+    Found 1-bit register for signal <rTimer_input<0>>.
+    Found 1-bit register for signal <rTimer_input<5>>.
+    Found 1-bit register for signal <rTimer_input<4>>.
+    Found 1-bit register for signal <rTimer_input<3>>.
+    Found 1-bit register for signal <rTimer_input<8>>.
+    Found 1-bit register for signal <rTimer_input<7>>.
+    Found 1-bit register for signal <rTimer_input<6>>.
+    Found 1-bit register for signal <rTimer_input<11>>.
+    Found 1-bit register for signal <rTimer_input<10>>.
+    Found 1-bit register for signal <rTimer_input<9>>.
+    Found 1-bit register for signal <rTimer_input<2>>.
+    Summary:
+	inferred  12 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <timer> synthesized.
+
+Synthesizing Unit <timer_core>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/timer_core.v".
+        TIMER_COUNTER_WIDTH = 16
+    Found 16-bit register for signal <counter_result>.
+    Found 16-bit register for signal <counter>.
+    Found 3-bit register for signal <state>.
+    Found finite state machine <FSM_8> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit adder for signal <counter[15]_GND_56_o_add_0_OUT> created at line 52.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  32 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <timer_core> synthesized.
+
+Synthesizing Unit <mux_io>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/mux_io.v".
+        GPIO_WIDTH = 13
+    Summary:
+	no macro.
+Unit <mux_io> synthesized.
+
+Synthesizing Unit <single_mux>.
+    Related source file is "/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/rtl/wb_gpio/single_mux.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <single_mux> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 15
+ 1024x16-bit dual-port RAM                             : 1
+ 128x16-bit dual-port RAM                              : 1
+ 256x16-bit dual-port RAM                              : 2
+ 4096x16-bit dual-port RAM                             : 1
+ 8192x16-bit dual-port RAM                             : 1
+ 8x23-bit single-port RAM                              : 9
+# Multipliers                                          : 1
+ 16x16-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 48
+ 10-bit adder                                          : 1
+ 12-bit adder                                          : 2
+ 12-bit subtractor                                     : 1
+ 13-bit adder                                          : 1
+ 14-bit adder                                          : 1
+ 14-bit subtractor                                     : 1
+ 15-bit adder                                          : 2
+ 16-bit adder                                          : 13
+ 18-bit adder                                          : 4
+ 2-bit adder                                           : 1
+ 23-bit adder                                          : 3
+ 23-bit subtractor                                     : 3
+ 3-bit adder                                           : 2
+ 32-bit adder                                          : 1
+ 4-bit adder                                           : 1
+ 5-bit adder                                           : 3
+ 5-bit subtractor                                      : 1
+ 7-bit adder                                           : 2
+ 7-bit subtractor                                      : 1
+ 8-bit adder                                           : 4
+# Registers                                            : 116
+ 1-bit register                                        : 35
+ 10-bit register                                       : 1
+ 12-bit register                                       : 2
+ 13-bit register                                       : 4
+ 14-bit register                                       : 1
+ 15-bit register                                       : 2
+ 16-bit register                                       : 39
+ 18-bit register                                       : 2
+ 2-bit register                                        : 3
+ 23-bit register                                       : 9
+ 256-bit register                                      : 1
+ 3-bit register                                        : 6
+ 4-bit register                                        : 1
+ 5-bit register                                        : 3
+ 64-bit register                                       : 1
+ 7-bit register                                        : 2
+ 8-bit register                                        : 4
+# Comparators                                          : 28
+ 12-bit comparator equal                               : 1
+ 12-bit comparator greater                             : 2
+ 16-bit comparator equal                               : 2
+ 16-bit comparator greater                             : 21
+ 8-bit comparator greater                              : 2
+# Multiplexers                                         : 105
+ 1-bit 13-to-1 multiplexer                             : 2
+ 1-bit 16-to-1 multiplexer                             : 4
+ 1-bit 2-to-1 multiplexer                              : 50
+ 1-bit 8-to-1 multiplexer                              : 1
+ 12-bit 2-to-1 multiplexer                             : 4
+ 14-bit 2-to-1 multiplexer                             : 1
+ 15-bit 2-to-1 multiplexer                             : 4
+ 16-bit 2-to-1 multiplexer                             : 22
+ 18-bit 2-to-1 multiplexer                             : 2
+ 3-bit 2-to-1 multiplexer                              : 2
+ 4-bit 2-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 3
+ 64-bit 2-to-1 multiplexer                             : 3
+ 7-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 4
+# Logic shifters                                       : 1
+ 45-bit shifter logical right                          : 1
+# Tristates                                            : 17
+ 1-bit tristate buffer                                 : 17
+# FSMs                                                 : 14
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1290 - Hierarchical block <gpio_selector[4].mux0> is unconnected in block <mux_in>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gpio_selector[5].mux0> is unconnected in block <mux_in>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gpio_selector[6].mux0> is unconnected in block <mux_in>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gpio_selector[7].mux0> is unconnected in block <mux_in>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gpio_selector[8].mux0> is unconnected in block <mux_in>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gpio_selector[9].mux0> is unconnected in block <mux_in>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gpio_selector[10].mux0> is unconnected in block <mux_in>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gpio_selector[11].mux0> is unconnected in block <mux_in>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gpio_selector[12].mux0> is unconnected in block <mux_in>.
+   It will be removed from the design.
+INFO:Xst:2261 - The FF/Latch <wb_dat_o_12> in Unit <dac0> is equivalent to the following 3 FFs/Latches, which will be removed : <wb_dat_o_13> <wb_dat_o_14> <wb_dat_o_15> 
+WARNING:Xst:1710 - FF/Latch <wb_dat_o_12> (without init value) has a constant value of 0 in block <dac0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <timer_conf_8> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <timer_conf_9> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <timer_conf_10> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <timer_conf_11> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <timer_conf_12> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <timer_conf_13> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <timer_conf_14> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <timer_conf_15> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_0> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_1> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_2> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_3> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_4> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_5> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_6> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_7> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_8> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_9> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_10> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_11> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_12> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_13> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_14> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_15> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_16> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_17> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_18> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_19> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_20> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_21> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_22> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_23> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_24> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_25> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_26> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_27> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_28> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_29> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_30> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_31> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_32> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_33> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_34> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_35> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_36> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_37> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_38> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_39> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_40> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_41> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_42> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_43> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_44> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_45> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_46> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2677 - Node <pwm_duty_15_47> of sequential type is unconnected in block <gpio0>.
+WARNING:Xst:2404 -  FFs/Latches <wb_dat_o<15:12>> (without init value) have a constant value of 0 in block <wb_dac>.
+
+Synthesizing (advanced) Unit <cic_comb>.
+INFO:Xst:3217 - HDL ADVISOR - Register <data_out> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_data_out_prev> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 23-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <channel>       |          |
+    |     diA            | connected to signal <diff>          |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3217 - HDL ADVISOR - Register <prev> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_data_in_prev> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 23-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <channel>       |          |
+    |     diA            | connected to signal <data_in>       |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <cic_comb> synthesized (advanced).
+
+Synthesizing (advanced) Unit <cic_int>.
+INFO:Xst:3217 - HDL ADVISOR - Register <data_out> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_accumulator> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 23-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <channel>       |          |
+    |     diA            | connected to signal <sum>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <cic_int> synthesized (advanced).
+
+Synthesizing (advanced) Unit <cic_op_fsm>.
+The following registers are absorbed into counter <channel>: 1 register on signal <channel>.
+Unit <cic_op_fsm> synthesized (advanced).
+
+Synthesizing (advanced) Unit <cic_sync>.
+The following registers are absorbed into counter <sys_count>: 1 register on signal <sys_count>.
+The following registers are absorbed into counter <comb_count>: 1 register on signal <comb_count>.
+Unit <cic_sync> synthesized (advanced).
+
+Synthesizing (advanced) Unit <core_clk>.
+The following registers are absorbed into counter <core_clk>: 1 register on signal <core_clk>.
+Unit <core_clk> synthesized (advanced).
+
+Synthesizing (advanced) Unit <dac>.
+The following registers are absorbed into accumulator <sigma_reg>: 1 register on signal <sigma_reg>.
+Unit <dac> synthesized (advanced).
+
+Synthesizing (advanced) Unit <dac_control>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <dac_control> synthesized (advanced).
+
+Synthesizing (advanced) Unit <dac_fifo>.
+The following registers are absorbed into counter <write_pointer>: 1 register on signal <write_pointer>.
+The following registers are absorbed into counter <read_pointer>: 1 register on signal <read_pointer>.
+INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <data_b>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4096-word x 16-bit                  |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <write_enable>  | high     |
+    |     addrA          | connected to signal <write_pointer> |          |
+    |     diA            | connected to signal <data_a>        |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 4096-word x 16-bit                  |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <read_enable>   | high     |
+    |     addrB          | connected to signal <read_pointer>  |          |
+    |     doB            | connected to signal <data_b>        |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <dac_fifo> synthesized (advanced).
+
+Synthesizing (advanced) Unit <dac_fsm>.
+The following registers are absorbed into counter <dac_counter>: 1 register on signal <dac_counter>.
+The following registers are absorbed into counter <sigma_count>: 1 register on signal <sigma_count>.
+Unit <dac_fsm> synthesized (advanced).
+
+Synthesizing (advanced) Unit <everloop>.
+The following registers are absorbed into counter <clk_cnt>: 1 register on signal <clk_cnt>.
+Unit <everloop> synthesized (advanced).
+
+Synthesizing (advanced) Unit <everloop_fsm>.
+The following registers are absorbed into counter <reset_count>: 1 register on signal <reset_count>.
+The following registers are absorbed into counter <read_count>: 1 register on signal <read_count>.
+Unit <everloop_fsm> synthesized (advanced).
+
+Synthesizing (advanced) Unit <everloop_ram>.
+INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <dat_b>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <N0_0>          | high     |
+    |     addrA          | connected to signal <adr_a>         |          |
+    |     diA            | connected to signal <_n0016>        |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     addrB          | connected to signal <adr_b>         |          |
+    |     doB            | connected to signal <dat_b>         |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <everloop_ram> synthesized (advanced).
+
+Synthesizing (advanced) Unit <fir_pipe_fsm>.
+The following registers are absorbed into counter <tap_count>: 1 register on signal <tap_count>.
+The following registers are absorbed into counter <channel_count>: 1 register on signal <channel_count>.
+Unit <fir_pipe_fsm> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mic_array>.
+The following registers are absorbed into counter <wr_addr>: 1 register on signal <wr_addr>.
+Unit <mic_array> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mic_array_buffer_1>.
+INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <dat_b>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 1024-word x 16-bit                  |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk_a>         | rise     |
+    |     weA            | connected to signal <we_a>          | high     |
+    |     addrA          | connected to signal <adr_a>         |          |
+    |     diA            | connected to signal <dat_a>         |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 1024-word x 16-bit                  |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk_b>         | rise     |
+    |     addrB          | connected to signal <adr_b>         |          |
+    |     doB            | connected to signal <dat_b>         |          |
+    |     dorstB         | connected to signal <en_b>          | low      |
+    | reset value        | 0000000000000000                               |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <mic_array_buffer_1> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mic_array_buffer_2>.
+INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <dat_b>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8192-word x 16-bit                  |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk_a>         | rise     |
+    |     weA            | connected to signal <we_a>          | high     |
+    |     addrA          | connected to signal <adr_a>         |          |
+    |     diA            | connected to signal <dat_a>         |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8192-word x 16-bit                  |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk_b>         | rise     |
+    |     addrB          | connected to signal <adr_b>         |          |
+    |     doB            | connected to signal <dat_b>         |          |
+    |     dorstB         | connected to signal <en_b>          | low      |
+    | reset value        | 0000000000000000                               |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <mic_array_buffer_2> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mic_array_buffer_3>.
+INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <dat_b>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 16-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk_a>         | rise     |
+    |     weA            | connected to signal <we_a>          | high     |
+    |     addrA          | connected to signal <adr_a>         |          |
+    |     diA            | connected to signal <dat_a>         |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 128-word x 16-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk_b>         | rise     |
+    |     addrB          | connected to signal <adr_b>         |          |
+    |     doB            | connected to signal <dat_b>         |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <mic_array_buffer_3> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mic_fir>.
+The following registers are absorbed into accumulator <data_reg_d>: 1 register on signal <data_reg_d>.
+The following registers are absorbed into counter <wr_data_addr>: 1 register on signal <wr_data_addr>.
+Unit <mic_fir> synthesized (advanced).
+
+Synthesizing (advanced) Unit <pwm>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <pwm> synthesized (advanced).
+
+Synthesizing (advanced) Unit <spi_slave>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <spi_slave> synthesized (advanced).
+
+Synthesizing (advanced) Unit <system>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <system> synthesized (advanced).
+
+Synthesizing (advanced) Unit <timer_core>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <timer_core> synthesized (advanced).
+
+Synthesizing (advanced) Unit <wb_bram>.
+The following registers are absorbed into counter <update_counter>: 1 register on signal <update_counter>.
+INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <wb_dat_o> <data_ram>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     enA            | connected to internal node          | high     |
+    |     weA            | connected to signal <wb_wr>         | high     |
+    |     addrA          | connected to signal <wb_adr_i>      |          |
+    |     diA            | connected to signal <wb_dat_i>      |          |
+    |     doA            | connected to signal <wb_dat_o>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     addrB          | connected to signal <("0000",update_counter)> |          |
+    |     doB            | connected to signal <data_ram>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <wb_bram> synthesized (advanced).
+WARNING:Xst:2677 - Node <timer_conf_8> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <timer_conf_9> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <timer_conf_10> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <timer_conf_11> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <timer_conf_12> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <timer_conf_13> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <timer_conf_14> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <timer_conf_15> of sequential type is unconnected in block <wb_gpio>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 15
+ 1024x16-bit dual-port block RAM                       : 1
+ 128x16-bit dual-port block RAM                        : 1
+ 256x16-bit dual-port block RAM                        : 2
+ 4096x16-bit dual-port block RAM                       : 1
+ 8192x16-bit dual-port block RAM                       : 1
+ 8x23-bit single-port distributed RAM                  : 9
+# Multipliers                                          : 1
+ 16x16-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 17
+ 12-bit adder                                          : 1
+ 12-bit subtractor                                     : 2
+ 15-bit adder                                          : 2
+ 18-bit adder                                          : 2
+ 23-bit adder                                          : 3
+ 23-bit subtractor                                     : 3
+ 5-bit subtractor                                      : 1
+ 7-bit adder                                           : 1
+ 7-bit subtractor                                      : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 28
+ 10-bit up counter                                     : 1
+ 12-bit up counter                                     : 2
+ 13-bit up counter                                     : 1
+ 14-bit up counter                                     : 1
+ 16-bit up counter                                     : 12
+ 2-bit up counter                                      : 1
+ 3-bit up counter                                      : 2
+ 4-bit up counter                                      : 1
+ 5-bit up counter                                      : 3
+ 7-bit up counter                                      : 2
+ 8-bit up counter                                      : 2
+# Accumulators                                         : 3
+ 16-bit up loadable accumulator                        : 1
+ 18-bit up loadable accumulator                        : 2
+# Registers                                            : 955
+ Flip-Flops                                            : 955
+# Comparators                                          : 28
+ 12-bit comparator equal                               : 1
+ 12-bit comparator greater                             : 2
+ 16-bit comparator equal                               : 2
+ 16-bit comparator greater                             : 21
+ 8-bit comparator greater                              : 2
+# Multiplexers                                         : 49
+ 1-bit 13-to-1 multiplexer                             : 2
+ 1-bit 16-to-1 multiplexer                             : 4
+ 1-bit 2-to-1 multiplexer                              : 21
+ 1-bit 8-to-1 multiplexer                              : 1
+ 12-bit 2-to-1 multiplexer                             : 2
+ 15-bit 2-to-1 multiplexer                             : 4
+ 16-bit 2-to-1 multiplexer                             : 10
+ 64-bit 2-to-1 multiplexer                             : 3
+ 8-bit 2-to-1 multiplexer                              : 2
+# Logic shifters                                       : 1
+ 45-bit shifter logical right                          : 1
+# FSMs                                                 : 14
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <pwm_duty_15_0> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_1> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_2> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_3> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_4> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_5> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_6> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_7> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_8> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_9> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_10> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_11> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_12> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_13> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_14> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_15> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_16> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_17> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_18> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_19> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_20> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_21> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_22> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_23> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_24> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_25> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_26> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_27> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_28> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_29> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_30> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_31> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_32> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_33> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_34> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_35> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_36> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_37> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_38> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_39> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_40> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_41> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_42> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_43> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_44> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_45> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_46> of sequential type is unconnected in block <wb_gpio>.
+WARNING:Xst:2677 - Node <pwm_duty_15_47> of sequential type is unconnected in block <wb_gpio>.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_6> on signal <state[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00
+ 001   | 01
+ 010   | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <mic_array0/mic_array0/cic0/FSM_4> on signal <state[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00
+ 001   | 01
+ 010   | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <mic_array0/mic_array0/cic_sync0/FSM_3> on signal <state[1:4]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 0001
+ 001   | 0010
+ 010   | 0100
+ 011   | 1000
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <mic_array0/mic_array0/mic_fir0/fir_pipe0/FSM_5> on signal <state[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00
+ 001   | 01
+ 010   | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <conbus0/FSM_0> on signal <state[1:1]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 01    | 0
+ 10    | 1
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <spi0/FSM_1> on signal <state[1:4]> with sequential encoding.
+Optimizing FSM <spi1/FSM_1> on signal <state[1:4]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0101  | 0011
+ 0100  | 0100
+ 0111  | 0101
+ 0110  | 0110
+ 0011  | 0111
+ 1000  | 1000
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <spi0/spi0/FSM_2> on signal <state[1:3]> with user encoding.
+Optimizing FSM <spi1/spi0/FSM_2> on signal <state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 010
+ 011   | 011
+ 100   | 100
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <dac0/FSM_7> on signal <state[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 011
+ 011   | 010
+ 100   | 110
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <gpio0/timer_stage[0].timer0/counter_stage[0].timer_core0/FSM_8> on signal <state[1:2]> with sequential encoding.
+Optimizing FSM <gpio0/timer_stage[0].timer0/counter_stage[1].timer_core0/FSM_8> on signal <state[1:2]> with sequential encoding.
+Optimizing FSM <gpio0/timer_stage[0].timer0/counter_stage[2].timer_core0/FSM_8> on signal <state[1:2]> with sequential encoding.
+Optimizing FSM <gpio0/timer_stage[0].timer0/counter_stage[3].timer_core0/FSM_8> on signal <state[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00
+ 001   | 01
+ 010   | 10
+-------------------
+
+Optimizing unit <system> ...
+
+Optimizing unit <mic_array> ...
+
+Optimizing unit <cic> ...
+
+Optimizing unit <cic_int> ...
+
+Optimizing unit <cic_comb> ...
+
+Optimizing unit <cic_sync> ...
+
+Optimizing unit <mic_fir> ...
+
+Optimizing unit <fir_pipe_fsm> ...
+
+Optimizing unit <conbus> ...
+
+Optimizing unit <wb_spi_slave> ...
+
+Optimizing unit <spi_slave> ...
+
+Optimizing unit <wb_bram> ...
+
+Optimizing unit <everloop_ram> ...
+
+Optimizing unit <everloop> ...
+
+Optimizing unit <dac_fifo> ...
+
+Optimizing unit <timer> ...
+
+Optimizing unit <timer_core> ...
+INFO:Xst:2261 - The FF/Latch <gpio0/coreclk0/core_clk_0> in Unit <system> is equivalent to the following FF/Latch, which will be removed : <mic_array0/mic_array0/cic_sync0/sys_count_0> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block system, actual ratio is 43.
+Forward register balancing over carry chain spi1/Madd_addr_bus[14]_GND_11_o_add_25_OUT_cy<0>
+Forward register balancing over carry chain spi0/Madd_addr_bus[14]_GND_11_o_add_25_OUT_cy<0>
+Forward register balancing over carry chain gpio0/coreclk0/Mcount_core_clk_cy<0>
+Forward register balancing over carry chain mic_array0/mic_array0/cic0/int_stage[2].int0/Madd_sum_cy<0>
+Forward register balancing over carry chain mic_array0/mic_array0/cic0/int_stage[1].int0/Madd_sum_cy<0>
+
+Pipelining and Register Balancing Report ...
+
+Processing Unit <system> :
+	Register(s) gpio0/timer_stage[0].timer0/rTimer_input_0 has(ve) been backward balanced into : gpio0/timer_stage[0].timer0/rTimer_input_0_BRB0 gpio0/timer_stage[0].timer0/rTimer_input_0_BRB1 gpio0/timer_stage[0].timer0/rTimer_input_0_BRB2.
+	Register(s) gpio0/timer_stage[0].timer0/rTimer_input_3 has(ve) been backward balanced into : gpio0/timer_stage[0].timer0/rTimer_input_3_BRB0 gpio0/timer_stage[0].timer0/rTimer_input_3_BRB1 gpio0/timer_stage[0].timer0/rTimer_input_3_BRB2.
+	Register(s) gpio0/timer_stage[0].timer0/rTimer_input_6 has(ve) been backward balanced into : gpio0/timer_stage[0].timer0/rTimer_input_6_BRB0 gpio0/timer_stage[0].timer0/rTimer_input_6_BRB1 gpio0/timer_stage[0].timer0/rTimer_input_6_BRB2.
+	Register(s) gpio0/timer_stage[0].timer0/rTimer_input_9 has(ve) been backward balanced into : gpio0/timer_stage[0].timer0/rTimer_input_9_BRB0 gpio0/timer_stage[0].timer0/rTimer_input_9_BRB1 gpio0/timer_stage[0].timer0/rTimer_input_9_BRB2.
+Unit <system> processed.
+FlipFlop mic_array0/mic_array0/wr_addr_12 has been replicated 2 time(s) to handle iob=true attribute.
+FlipFlop dac0/dac1_rigth/sigma_reg_17 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop dac0/dac0_left/sigma_reg_17 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop mic_array0/mic_array0/cic_sync0/pdm_clk has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop bram0/dac_mute has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop bram0/dac_hp_nspk has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+Processing Unit <system> :
+	Found 2-bit shift register for signal <spi0/spi0/SCKr_1>.
+	Found 2-bit shift register for signal <spi0/spi0/MOSIr_1>.
+Unit <system> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1384
+ Flip-Flops                                            : 1384
+# Shift Registers                                      : 2
+ 2-bit shift register                                  : 2
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : project.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 2950
+#      GND                         : 1
+#      INV                         : 29
+#      LUT1                        : 79
+#      LUT2                        : 318
+#      LUT3                        : 303
+#      LUT4                        : 410
+#      LUT5                        : 205
+#      LUT6                        : 450
+#      MUXCY                       : 626
+#      MUXF7                       : 13
+#      MUXF8                       : 4
+#      VCC                         : 1
+#      XORCY                       : 511
+# FlipFlops/Latches                : 1386
+#      FD                          : 11
+#      FD_1                        : 24
+#      FDC                         : 243
+#      FDCE                        : 987
+#      FDCE_1                      : 64
+#      FDE                         : 20
+#      FDP                         : 4
+#      FDPE                        : 17
+#      FDRE                        : 16
+# RAMS                             : 223
+#      RAM16X1S                    : 207
+#      RAMB16BWER                  : 13
+#      RAMB8BWER                   : 3
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
+# Clock Buffers                    : 5
+#      BUFG                        : 5
+# IO Buffers                       : 53
+#      IBUF                        : 20
+#      IBUFG                       : 1
+#      IOBUF                       : 15
+#      OBUF                        : 15
+#      OBUFT                       : 2
+# DCMs                             : 1
+#      DCM_SP                      : 1
+# DSPs                             : 1
+#      DSP48A1                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9ftg256-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1364  out of  11440    11%  
+ Number of Slice LUTs:                 2003  out of   5720    35%  
+    Number used as Logic:              1794  out of   5720    31%  
+    Number used as Memory:              209  out of   1440    14%  
+       Number used as RAM:              207
+       Number used as SRL:                2
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   2150
+   Number with an unused Flip Flop:     786  out of   2150    36%  
+   Number with an unused LUT:           147  out of   2150     6%  
+   Number of fully used LUT-FF pairs:  1217  out of   2150    56%  
+   Number of unique control sets:        54
+
+IO Utilization: 
+ Number of IOs:                          53
+ Number of bonded IOBs:                  53  out of    186    28%  
+    IOB Flip Flops/Latches:              22
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:               15  out of     32    46%  
+    Number using Block RAM only:         15
+ Number of BUFG/BUFGCTRLs:                5  out of     16    31%  
+ Number of DSP48A1s:                      1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-----------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                   | Load  |
+-----------------------------------+-----------------------------------------+-------+
+clk_50                             | DCM_SP:CLKFX                            | 1483  |
+gpio0/core_clk_bank_0              | BUFG                                    | 80    |
+gpio0/core_clk_bank_1              | NONE(gpio0/pwm_stage[1].pwm0/counter_15)| 16    |
+gpio0/core_clk_bank_2              | NONE(gpio0/pwm_stage[2].pwm0/counter_15)| 16    |
+gpio0/core_clk_bank_3              | NONE(gpio0/pwm_stage[3].pwm0/counter_15)| 16    |
+-----------------------------------+-----------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 27.574ns (Maximum Frequency: 36.266MHz)
+   Minimum input arrival time before clock: 7.176ns
+   Maximum output required time after clock: 8.196ns
+   Maximum combinational path delay: 5.857ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_50'
+  Clock period: 27.574ns (frequency: 36.266MHz)
+  Total number of paths / destination ports: 62266 / 3785
+-------------------------------------------------------------------------
+Delay:               9.191ns (Levels of Logic = 5)
+  Source:            conbus0/conbus_arb/state_FSM_FFd1 (FF)
+  Destination:       gpio0/wb_dat_o_12 (FF)
+  Source Clock:      clk_50 rising 3.0X
+  Destination Clock: clk_50 rising 3.0X
+
+  Data Path: conbus0/conbus_arb/state_FSM_FFd1 to gpio0/wb_dat_o_12
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q            367   0.525   2.444  conbus0/conbus_arb/state_FSM_FFd1 (conbus0/conbus_arb/state_FSM_FFd1)
+     LUT3:I2->O           37   0.254   1.604  conbus0/i_bus_m<27>1 (bram0_adr<3>)
+     LUT6:I5->O           20   0.254   1.286  gpio0/wb_adr_i[4]_pwm_duty[0][15]_wide_mux_22_OUT<224>11 (gpio0/wb_adr_i[4]_pwm_duty[0][15]_wide_mux_22_OUT<224>1)
+     LUT6:I5->O           13   0.254   1.326  gpio0/wb_adr_i[5]_GND_39_o_equal_9_o<5>1 (gpio0/wb_adr_i[5]_GND_39_o_equal_9_o)
+     LUT6:I3->O            1   0.235   0.682  gpio0/wb_adr_i[5]_GND_39_o_select_14_OUT<48>4_SW0 (N222)
+     LUT6:I5->O            1   0.254   0.000  gpio0/wb_adr_i[5]_GND_39_o_select_14_OUT<48>4 (gpio0/wb_adr_i[5]_GND_39_o_select_14_OUT<0>)
+     FDE:D                     0.074          gpio0/wb_dat_o_0
+    ----------------------------------------
+    Total                      9.191ns (1.850ns logic, 7.341ns route)
+                                       (20.1% logic, 79.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'gpio0/core_clk_bank_0'
+  Clock period: 4.859ns (frequency: 205.793MHz)
+  Total number of paths / destination ports: 5544 / 80
+-------------------------------------------------------------------------
+Delay:               4.859ns (Levels of Logic = 26)
+  Source:            gpio0/pwm_stage[0].pwm0/counter_0 (FF)
+  Destination:       gpio0/pwm_stage[0].pwm0/counter_15 (FF)
+  Source Clock:      gpio0/core_clk_bank_0 rising
+  Destination Clock: gpio0/core_clk_bank_0 rising
+
+  Data Path: gpio0/pwm_stage[0].pwm0/counter_0 to gpio0/pwm_stage[0].pwm0/counter_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             11   0.525   1.315  gpio0/pwm_stage[0].pwm0/counter_0 (gpio0/pwm_stage[0].pwm0/counter_0)
+     LUT4:I0->O            1   0.254   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_lut<0> (gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<0> (gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<1> (gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<2> (gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<3> (gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<4> (gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<5> (gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<6> (gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<6>)
+     MUXCY:CI->O          17   0.023   1.317  gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<7> (gpio0/pwm_stage[0].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<7>)
+     LUT2:I0->O            1   0.250   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_lut<0> (gpio0/pwm_stage[0].pwm0/Mcount_counter_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<0> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<1> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<2> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<3> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<4> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<5> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<6> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<7> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<8> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<9> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<10> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<11> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<12> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<13> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<13>)
+     MUXCY:CI->O           0   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<14> (gpio0/pwm_stage[0].pwm0/Mcount_counter_cy<14>)
+     XORCY:CI->O           1   0.206   0.000  gpio0/pwm_stage[0].pwm0/Mcount_counter_xor<15> (gpio0/pwm_stage[0].pwm0/Mcount_counter15)
+     FDC:D                     0.074          gpio0/pwm_stage[0].pwm0/counter_15
+    ----------------------------------------
+    Total                      4.859ns (2.227ns logic, 2.632ns route)
+                                       (45.8% logic, 54.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'gpio0/core_clk_bank_1'
+  Clock period: 4.859ns (frequency: 205.793MHz)
+  Total number of paths / destination ports: 5000 / 16
+-------------------------------------------------------------------------
+Delay:               4.859ns (Levels of Logic = 26)
+  Source:            gpio0/pwm_stage[1].pwm0/counter_0 (FF)
+  Destination:       gpio0/pwm_stage[1].pwm0/counter_15 (FF)
+  Source Clock:      gpio0/core_clk_bank_1 rising
+  Destination Clock: gpio0/core_clk_bank_1 rising
+
+  Data Path: gpio0/pwm_stage[1].pwm0/counter_0 to gpio0/pwm_stage[1].pwm0/counter_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             11   0.525   1.315  gpio0/pwm_stage[1].pwm0/counter_0 (gpio0/pwm_stage[1].pwm0/counter_0)
+     LUT4:I0->O            1   0.254   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_lut<0> (gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<0> (gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<1> (gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<2> (gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<3> (gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<4> (gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<5> (gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<6> (gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<6>)
+     MUXCY:CI->O          17   0.023   1.317  gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<7> (gpio0/pwm_stage[1].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<7>)
+     LUT2:I0->O            1   0.250   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_lut<0> (gpio0/pwm_stage[1].pwm0/Mcount_counter_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<0> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<1> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<2> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<3> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<4> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<5> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<6> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<7> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<8> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<9> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<10> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<11> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<12> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<13> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<13>)
+     MUXCY:CI->O           0   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<14> (gpio0/pwm_stage[1].pwm0/Mcount_counter_cy<14>)
+     XORCY:CI->O           1   0.206   0.000  gpio0/pwm_stage[1].pwm0/Mcount_counter_xor<15> (gpio0/pwm_stage[1].pwm0/Mcount_counter15)
+     FDC:D                     0.074          gpio0/pwm_stage[1].pwm0/counter_15
+    ----------------------------------------
+    Total                      4.859ns (2.227ns logic, 2.632ns route)
+                                       (45.8% logic, 54.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'gpio0/core_clk_bank_2'
+  Clock period: 4.859ns (frequency: 205.793MHz)
+  Total number of paths / destination ports: 5000 / 16
+-------------------------------------------------------------------------
+Delay:               4.859ns (Levels of Logic = 26)
+  Source:            gpio0/pwm_stage[2].pwm0/counter_0 (FF)
+  Destination:       gpio0/pwm_stage[2].pwm0/counter_15 (FF)
+  Source Clock:      gpio0/core_clk_bank_2 rising
+  Destination Clock: gpio0/core_clk_bank_2 rising
+
+  Data Path: gpio0/pwm_stage[2].pwm0/counter_0 to gpio0/pwm_stage[2].pwm0/counter_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             11   0.525   1.315  gpio0/pwm_stage[2].pwm0/counter_0 (gpio0/pwm_stage[2].pwm0/counter_0)
+     LUT4:I0->O            1   0.254   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_lut<0> (gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<0> (gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<1> (gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<2> (gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<3> (gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<4> (gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<5> (gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<6> (gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<6>)
+     MUXCY:CI->O          17   0.023   1.317  gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<7> (gpio0/pwm_stage[2].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<7>)
+     LUT2:I0->O            1   0.250   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_lut<0> (gpio0/pwm_stage[2].pwm0/Mcount_counter_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<0> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<1> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<2> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<3> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<4> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<5> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<6> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<7> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<8> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<9> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<10> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<11> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<12> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<13> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<13>)
+     MUXCY:CI->O           0   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<14> (gpio0/pwm_stage[2].pwm0/Mcount_counter_cy<14>)
+     XORCY:CI->O           1   0.206   0.000  gpio0/pwm_stage[2].pwm0/Mcount_counter_xor<15> (gpio0/pwm_stage[2].pwm0/Mcount_counter15)
+     FDC:D                     0.074          gpio0/pwm_stage[2].pwm0/counter_15
+    ----------------------------------------
+    Total                      4.859ns (2.227ns logic, 2.632ns route)
+                                       (45.8% logic, 54.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'gpio0/core_clk_bank_3'
+  Clock period: 4.661ns (frequency: 214.535MHz)
+  Total number of paths / destination ports: 5000 / 16
+-------------------------------------------------------------------------
+Delay:               4.661ns (Levels of Logic = 26)
+  Source:            gpio0/pwm_stage[3].pwm0/counter_0 (FF)
+  Destination:       gpio0/pwm_stage[3].pwm0/counter_15 (FF)
+  Source Clock:      gpio0/core_clk_bank_3 rising
+  Destination Clock: gpio0/core_clk_bank_3 rising
+
+  Data Path: gpio0/pwm_stage[3].pwm0/counter_0 to gpio0/pwm_stage[3].pwm0/counter_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.525   1.117  gpio0/pwm_stage[3].pwm0/counter_0 (gpio0/pwm_stage[3].pwm0/counter_0)
+     LUT4:I0->O            1   0.254   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_lut<0> (gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<0> (gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<1> (gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<2> (gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<3> (gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<4> (gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<5> (gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<6> (gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<6>)
+     MUXCY:CI->O          17   0.023   1.317  gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<7> (gpio0/pwm_stage[3].pwm0/Mcompar_period[15]_counter[15]_LessThan_5_o_cy<7>)
+     LUT2:I0->O            1   0.250   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_lut<0> (gpio0/pwm_stage[3].pwm0/Mcount_counter_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<0> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<1> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<2> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<3> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<4> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<5> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<6> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<7> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<8> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<9> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<10> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<11> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<12> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<13> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<13>)
+     MUXCY:CI->O           0   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<14> (gpio0/pwm_stage[3].pwm0/Mcount_counter_cy<14>)
+     XORCY:CI->O           1   0.206   0.000  gpio0/pwm_stage[3].pwm0/Mcount_counter_xor<15> (gpio0/pwm_stage[3].pwm0/Mcount_counter15)
+     FDC:D                     0.074          gpio0/pwm_stage[3].pwm0/counter_15
+    ----------------------------------------
+    Total                      4.661ns (2.227ns logic, 2.434ns route)
+                                       (47.8% logic, 52.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_50'
+  Total number of paths / destination ports: 1467 / 1463
+-------------------------------------------------------------------------
+Offset:              7.176ns (Levels of Logic = 2)
+  Source:            resetn (PAD)
+  Destination:       mic_array0/mic_array0/cic0/comb_stage[2].comb0/Mram_data_out_prev22 (RAM)
+  Destination Clock: clk_50 rising 3.0X
+
+  Data Path: resetn to mic_array0/mic_array0/cic0/comb_stage[2].comb0/Mram_data_out_prev22
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          1334   1.328   2.919  resetn_IBUF (resetn_IBUF)
+     LUT4:I1->O          138   0.235   2.325  mic_array0/mic_array0/cic0/comb_stage[2].comb0/Mmux_BUS_000211 (mic_array0/mic_array0/cic0/comb_stage[2].comb0/BUS_0002)
+     RAM16X1S:WE               0.369          mic_array0/mic_array0/cic0/comb_stage[2].comb0/Mram_data_in_prev1
+    ----------------------------------------
+    Total                      7.176ns (1.932ns logic, 5.244ns route)
+                                       (26.9% logic, 73.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'gpio0/core_clk_bank_0'
+  Total number of paths / destination ports: 80 / 80
+-------------------------------------------------------------------------
+Offset:              4.477ns (Levels of Logic = 1)
+  Source:            resetn (PAD)
+  Destination:       gpio0/pwm_stage[0].pwm0/counter_15 (FF)
+  Destination Clock: gpio0/core_clk_bank_0 rising
+
+  Data Path: resetn to gpio0/pwm_stage[0].pwm0/counter_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          1334   1.328   2.690  resetn_IBUF (resetn_IBUF)
+     FDC:CLR                   0.459          gpio0/pwm_stage[0].pwm0/counter_0
+    ----------------------------------------
+    Total                      4.477ns (1.787ns logic, 2.690ns route)
+                                       (39.9% logic, 60.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'gpio0/core_clk_bank_1'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              4.477ns (Levels of Logic = 1)
+  Source:            resetn (PAD)
+  Destination:       gpio0/pwm_stage[1].pwm0/counter_15 (FF)
+  Destination Clock: gpio0/core_clk_bank_1 rising
+
+  Data Path: resetn to gpio0/pwm_stage[1].pwm0/counter_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          1334   1.328   2.690  resetn_IBUF (resetn_IBUF)
+     FDC:CLR                   0.459          gpio0/pwm_stage[1].pwm0/counter_0
+    ----------------------------------------
+    Total                      4.477ns (1.787ns logic, 2.690ns route)
+                                       (39.9% logic, 60.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'gpio0/core_clk_bank_2'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              4.477ns (Levels of Logic = 1)
+  Source:            resetn (PAD)
+  Destination:       gpio0/pwm_stage[2].pwm0/counter_15 (FF)
+  Destination Clock: gpio0/core_clk_bank_2 rising
+
+  Data Path: resetn to gpio0/pwm_stage[2].pwm0/counter_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          1334   1.328   2.690  resetn_IBUF (resetn_IBUF)
+     FDC:CLR                   0.459          gpio0/pwm_stage[2].pwm0/counter_0
+    ----------------------------------------
+    Total                      4.477ns (1.787ns logic, 2.690ns route)
+                                       (39.9% logic, 60.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'gpio0/core_clk_bank_3'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              4.477ns (Levels of Logic = 1)
+  Source:            resetn (PAD)
+  Destination:       gpio0/pwm_stage[3].pwm0/counter_15 (FF)
+  Destination Clock: gpio0/core_clk_bank_3 rising
+
+  Data Path: resetn to gpio0/pwm_stage[3].pwm0/counter_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          1334   1.328   2.690  resetn_IBUF (resetn_IBUF)
+     FDC:CLR                   0.459          gpio0/pwm_stage[3].pwm0/counter_0
+    ----------------------------------------
+    Total                      4.477ns (1.787ns logic, 2.690ns route)
+                                       (39.9% logic, 60.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_50'
+  Total number of paths / destination ports: 492 / 26
+-------------------------------------------------------------------------
+Offset:              7.957ns (Levels of Logic = 11)
+  Source:            gpio0/pwm_duty_15_48 (FF)
+  Destination:       gpio_io<12> (PAD)
+  Source Clock:      clk_50 rising 3.0X
+
+  Data Path: gpio0/pwm_duty_15_48 to gpio_io<12>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.525   1.042  gpio0/pwm_duty_15_48 (gpio0/pwm_duty_15_48)
+     LUT4:I0->O            1   0.254   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_lut<0> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<0> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<1> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<2> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<3> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<4> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<5> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<5>)
+     MUXCY:CI->O           1   0.235   0.790  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<6> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<6>)
+     LUT5:I3->O            1   0.250   0.682  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<7> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<7>)
+     LUT4:I3->O            1   0.254   0.681  gpio0/mux_out/gpio_selector[12].mux0/Mmux_mux_output11 (gpio0/gpio_o<12>)
+     IOBUF:I->IO               2.912          gpio_io_12_IOBUF (gpio_io<12>)
+    ----------------------------------------
+    Total                      7.957ns (4.762ns logic, 3.195ns route)
+                                       (59.8% logic, 40.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'gpio0/core_clk_bank_3'
+  Total number of paths / destination ports: 30 / 1
+-------------------------------------------------------------------------
+Offset:              7.998ns (Levels of Logic = 11)
+  Source:            gpio0/pwm_stage[3].pwm0/counter_1 (FF)
+  Destination:       gpio_io<12> (PAD)
+  Source Clock:      gpio0/core_clk_bank_3 rising
+
+  Data Path: gpio0/pwm_stage[3].pwm0/counter_1 to gpio_io<12>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.525   1.117  gpio0/pwm_stage[3].pwm0/counter_1 (gpio0/pwm_stage[3].pwm0/counter_1)
+     LUT4:I0->O            0   0.254   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_lutdi (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_lutdi)
+     MUXCY:DI->O           1   0.181   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<0> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<1> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<2> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<3> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<4> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<5> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<5>)
+     MUXCY:CI->O           1   0.235   0.790  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<6> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<6>)
+     LUT5:I3->O            1   0.250   0.682  gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<7> (gpio0/pwm_stage[3].pwm0/Mcompar_pwm<0>_cy<7>)
+     LUT4:I3->O            1   0.254   0.681  gpio0/mux_out/gpio_selector[12].mux0/Mmux_mux_output11 (gpio0/gpio_o<12>)
+     IOBUF:I->IO               2.912          gpio_io_12_IOBUF (gpio_io<12>)
+    ----------------------------------------
+    Total                      7.998ns (4.728ns logic, 3.270ns route)
+                                       (59.1% logic, 40.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'gpio0/core_clk_bank_2'
+  Total number of paths / destination ports: 120 / 4
+-------------------------------------------------------------------------
+Offset:              8.196ns (Levels of Logic = 11)
+  Source:            gpio0/pwm_stage[2].pwm0/counter_1 (FF)
+  Destination:       gpio_io<11> (PAD)
+  Source Clock:      gpio0/core_clk_bank_2 rising
+
+  Data Path: gpio0/pwm_stage[2].pwm0/counter_1 to gpio_io<11>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             11   0.525   1.315  gpio0/pwm_stage[2].pwm0/counter_1 (gpio0/pwm_stage[2].pwm0/counter_1)
+     LUT4:I0->O            0   0.254   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_lutdi (gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_lutdi)
+     MUXCY:DI->O           1   0.181   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<0> (gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<1> (gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<2> (gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<3> (gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<4> (gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<5> (gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<5>)
+     MUXCY:CI->O           1   0.235   0.790  gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<6> (gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<6>)
+     LUT5:I3->O            1   0.250   0.682  gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<7> (gpio0/pwm_stage[2].pwm0/Mcompar_pwm<2>_cy<7>)
+     LUT4:I3->O            1   0.254   0.681  gpio0/mux_out/gpio_selector[10].mux0/Mmux_mux_output11 (gpio0/gpio_o<10>)
+     IOBUF:I->IO               2.912          gpio_io_10_IOBUF (gpio_io<10>)
+    ----------------------------------------
+    Total                      8.196ns (4.728ns logic, 3.468ns route)
+                                       (57.7% logic, 42.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'gpio0/core_clk_bank_1'
+  Total number of paths / destination ports: 120 / 4
+-------------------------------------------------------------------------
+Offset:              8.196ns (Levels of Logic = 11)
+  Source:            gpio0/pwm_stage[1].pwm0/counter_1 (FF)
+  Destination:       gpio_io<7> (PAD)
+  Source Clock:      gpio0/core_clk_bank_1 rising
+
+  Data Path: gpio0/pwm_stage[1].pwm0/counter_1 to gpio_io<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             11   0.525   1.315  gpio0/pwm_stage[1].pwm0/counter_1 (gpio0/pwm_stage[1].pwm0/counter_1)
+     LUT4:I0->O            0   0.254   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_lutdi (gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_lutdi)
+     MUXCY:DI->O           1   0.181   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<0> (gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<1> (gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<2> (gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<3> (gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<4> (gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<5> (gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<5>)
+     MUXCY:CI->O           1   0.235   0.790  gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<6> (gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<6>)
+     LUT5:I3->O            1   0.250   0.682  gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<7> (gpio0/pwm_stage[1].pwm0/Mcompar_pwm<3>_cy<7>)
+     LUT4:I3->O            1   0.254   0.681  gpio0/mux_out/gpio_selector[7].mux0/Mmux_mux_output11 (gpio0/gpio_o<7>)
+     IOBUF:I->IO               2.912          gpio_io_7_IOBUF (gpio_io<7>)
+    ----------------------------------------
+    Total                      8.196ns (4.728ns logic, 3.468ns route)
+                                       (57.7% logic, 42.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'gpio0/core_clk_bank_0'
+  Total number of paths / destination ports: 120 / 4
+-------------------------------------------------------------------------
+Offset:              8.196ns (Levels of Logic = 11)
+  Source:            gpio0/pwm_stage[0].pwm0/counter_1 (FF)
+  Destination:       gpio_io<3> (PAD)
+  Source Clock:      gpio0/core_clk_bank_0 rising
+
+  Data Path: gpio0/pwm_stage[0].pwm0/counter_1 to gpio_io<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             11   0.525   1.315  gpio0/pwm_stage[0].pwm0/counter_1 (gpio0/pwm_stage[0].pwm0/counter_1)
+     LUT4:I0->O            0   0.254   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_lutdi (gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_lutdi)
+     MUXCY:DI->O           1   0.181   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<0> (gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<1> (gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<2> (gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<3> (gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<4> (gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<5> (gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<5>)
+     MUXCY:CI->O           1   0.235   0.790  gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<6> (gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<6>)
+     LUT5:I3->O            1   0.250   0.682  gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<7> (gpio0/pwm_stage[0].pwm0/Mcompar_pwm<3>_cy<7>)
+     LUT4:I3->O            1   0.254   0.681  gpio0/mux_out/gpio_selector[3].mux0/Mmux_mux_output11 (gpio0/gpio_o<3>)
+     IOBUF:I->IO               2.912          gpio_io_3_IOBUF (gpio_io<3>)
+    ----------------------------------------
+    Total                      8.196ns (4.728ns logic, 3.468ns route)
+                                       (57.7% logic, 42.3% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Delay:               5.857ns (Levels of Logic = 3)
+  Source:            GPIO_25 (PAD)
+  Destination:       EN_ESP (PAD)
+
+  Data Path: GPIO_25 to EN_ESP
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.682  GPIO_25_IBUF (GPIO_25_IBUF)
+     LUT2:I1->O            1   0.254   0.681  count[1]_GPIO_25_AND_1_o1 (count[1]_GPIO_25_AND_1_o)
+     OBUFT:T->O                2.912          EN_ESP_OBUFT (EN_ESP)
+    ----------------------------------------
+    Total                      5.857ns (4.494ns logic, 1.363ns route)
+                                       (76.7% logic, 23.3% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk_50
+---------------------+---------+---------+---------+---------+
+                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------+---------+---------+---------+---------+
+clk_50               |    9.191|    2.901|    2.396|         |
+gpio0/core_clk_bank_0|         |         |    1.324|         |
+---------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock gpio0/core_clk_bank_0
+---------------------+---------+---------+---------+---------+
+                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------+---------+---------+---------+---------+
+clk_50               |    4.552|         |         |         |
+gpio0/core_clk_bank_0|    4.859|         |         |         |
+---------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock gpio0/core_clk_bank_1
+---------------------+---------+---------+---------+---------+
+                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------+---------+---------+---------+---------+
+clk_50               |    4.552|         |         |         |
+gpio0/core_clk_bank_1|    4.859|         |         |         |
+---------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock gpio0/core_clk_bank_2
+---------------------+---------+---------+---------+---------+
+                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------+---------+---------+---------+---------+
+clk_50               |    4.552|         |         |         |
+gpio0/core_clk_bank_2|    4.859|         |         |         |
+---------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock gpio0/core_clk_bank_3
+---------------------+---------+---------+---------+---------+
+                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------+---------+---------+---------+---------+
+clk_50               |    4.552|         |         |         |
+gpio0/core_clk_bank_3|    4.661|         |         |         |
+---------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 11.42 secs
+ 
+--> 
+
+
+Total memory usage is 406980 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  197 (   0 filtered)
+Number of infos    :   21 (   0 filtered)
+

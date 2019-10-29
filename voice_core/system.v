@@ -22,7 +22,7 @@ module system #(
   parameter                  EVERLOOP_FILE     = "rtl/wb_everloop/image           .ram",
   parameter                  ADDR_WIDTH        = 15                              ,
   parameter                  DATA_WIDTH        = 16                              ,
-  parameter                  GPIO_WIDTH        = 16                              ,
+  parameter                  GPIO_WIDTH        = 13                              ,
   //General Configuration
   parameter                  SYS_FREQ_HZ       = 150_000_000                     ,
   parameter                  CLKFX_DIVIDE      = 1                               ,
@@ -50,6 +50,11 @@ module system #(
   input                   rpi_ss      ,
   input                   rpi_sck     ,
   output                  rpi_miso    ,
+  input                   rpi_ss1     ,
+  /* Component SPI interface */
+  output                  component_mosi,
+  output                  component_cs ,
+  output                  component_clk,
   /* ESP SPI interface */
   input                   esp_mosi    ,
   input                   esp_ss      ,
@@ -79,6 +84,11 @@ module system #(
   inout  [GPIO_WIDTH-1:0] gpio_io
   /* Debug */
 );
+
+  // Set up component SPI
+  assign component_cs = rpi_ss1;
+  assign component_clk = rpi_sck;
+  assign component_mosi = rpi_mosi;
 
   assign ESP_RX      = PI_TX;
   assign PI_RX       = ESP_TX;

@@ -19,7 +19,7 @@
 
 
 module mux_io#(
-  parameter GPIO_WIDTH   = 16)(
+  parameter GPIO_WIDTH   = 13)(
   input  [GPIO_WIDTH-1:0]  sig1,
   input  [GPIO_WIDTH-1:0]  sig2,
   input  [GPIO_WIDTH-1:0]  select,

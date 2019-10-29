@@ -1,0 +1,43 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -p
+xc6slx9-2ftg256 project.ngc -uc ../voice.ucf
+
+Reading NGO file
+"/home/sam/Documents/github_clones/matrix-voice-fpga/voice_core/build/project.ng
+c" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "../voice.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem:178 - TNM 'clk50_grp', used in period specification
+   'TS_PER_CLK50', was traced into DCM_SP instance dcm/dcm_sp_inst. The
+   following new TNM groups and period specifications were generated at the
+   DCM_SP output(s): 
+   CLKFX: <TIMESPEC TS_dcm_clkfx = PERIOD "dcm_clkfx" TS_PER_CLK50 / 3 HIGH 50%>
+
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 403656 kilobytes
+
+Writing NGD file "project.ngd" ...
+Total REAL time to NGDBUILD completion:  2 sec
+Total CPU time to NGDBUILD completion:   2 sec
+
+Writing NGDBUILD log file "project.bld"...
