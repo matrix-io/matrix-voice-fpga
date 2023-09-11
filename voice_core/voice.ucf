@@ -76,15 +76,15 @@ NET "dac_hp_nspk"       LOC = "D1"  | IOSTANDARD = LVCMOS33;
 #######################
 # MIC ARRAY           #
 #######################
-NET "pdm_clk"      LOC = "B5"  | IOSTANDARD = LVCMOS33;
-NET "pdm_data<0>"  LOC = "E6"  | IOSTANDARD = LVCMOS33;
-NET "pdm_data<1>"  LOC = "B8"  | IOSTANDARD = LVCMOS33;
-NET "pdm_data<2>"  LOC = "A8"  | IOSTANDARD = LVCMOS33;
-NET "pdm_data<3>"  LOC = "C7"  | IOSTANDARD = LVCMOS33;
-NET "pdm_data<4>"  LOC = "A7"  | IOSTANDARD = LVCMOS33;
-NET "pdm_data<5>"  LOC = "A6"  | IOSTANDARD = LVCMOS33;
-NET "pdm_data<6>"  LOC = "B6"  | IOSTANDARD = LVCMOS33;
-NET "pdm_data<7>"  LOC = "A5"  | IOSTANDARD = LVCMOS33;
+NET "pdm_clk"      LOC = "G1"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<0>"  LOC = "G3"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<1>"  LOC = "H1"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<2>"  LOC = "H2"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<3>"  LOC = "J1"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<4>"  LOC = "J3"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<5>"  LOC = "K1"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<6>"  LOC = "K2"  | IOSTANDARD = LVCMOS33;
+NET "pdm_data<7>"  LOC = "L1"  | IOSTANDARD = LVCMOS33;
 NET "mic_irq<0>"   LOC = "R7"  | IOSTANDARD = LVCMOS33; #RPI_GPIO6
 NET "mic_irq<1>"   LOC = "H4"  | IOSTANDARD = LVCMOS33; #ESP_IO5
 
@@ -99,12 +99,12 @@ NET "gpio_io<12>" LOC="P1" | IOSTANDARD = LVCMOS33;
 NET "gpio_io<11>" LOC="N1" | IOSTANDARD = LVCMOS33;
 NET "gpio_io<10>" LOC="M2" | IOSTANDARD = LVCMOS33;
 NET "gpio_io<9>"  LOC="M1" | IOSTANDARD = LVCMOS33;
-NET "gpio_io<8>"  LOC="L1" | IOSTANDARD = LVCMOS33;
-NET "gpio_io<7>"  LOC="K2" | IOSTANDARD = LVCMOS33;
-NET "gpio_io<6>"  LOC="K1" | IOSTANDARD = LVCMOS33;
-NET "gpio_io<5>"  LOC="J3" | IOSTANDARD = LVCMOS33;
-NET "gpio_io<4>"  LOC="J1" | IOSTANDARD = LVCMOS33;
-NET "gpio_io<3>"  LOC="H2" | IOSTANDARD = LVCMOS33;
-NET "gpio_io<2>"  LOC="H1" | IOSTANDARD = LVCMOS33;
-NET "gpio_io<1>"  LOC="G3" | IOSTANDARD = LVCMOS33;
-NET "gpio_io<0>"  LOC="G1" | IOSTANDARD = LVCMOS33;
+NET "gpio_io<8>"  LOC="A5" | IOSTANDARD = LVCMOS33;
+NET "gpio_io<7>"  LOC="B6" | IOSTANDARD = LVCMOS33;
+NET "gpio_io<6>"  LOC="A6" | IOSTANDARD = LVCMOS33;
+NET "gpio_io<5>"  LOC="A7" | IOSTANDARD = LVCMOS33;
+NET "gpio_io<4>"  LOC="C7" | IOSTANDARD = LVCMOS33;
+NET "gpio_io<3>"  LOC="A8" | IOSTANDARD = LVCMOS33;
+NET "gpio_io<2>"  LOC="B8" | IOSTANDARD = LVCMOS33;
+NET "gpio_io<1>"  LOC="E6" | IOSTANDARD = LVCMOS33;
+NET "gpio_io<0>"  LOC="B5" | IOSTANDARD = LVCMOS33;
