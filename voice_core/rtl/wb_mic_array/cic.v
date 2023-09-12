@@ -54,7 +54,7 @@ always @(posedge clk or posedge resetn) begin
     pdm_data_reg <= {CHANNELS{1'b0}};
   else begin
     if (pdm_read_enable)
-      pdm_data_reg <= ~pdm_data;
+      pdm_data_reg <= pdm_data;
     else
       pdm_data_reg <= pdm_data_reg;
   end

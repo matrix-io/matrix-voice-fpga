@@ -38,7 +38,7 @@ module cic_sync #(
   input [$clog2(CHANNELS)-1:0] channel,
 
   input cic_finish,
-  output reg pdm_clk,
+  output pdm_clk,
   output reg read_enable,
   output reg integrator_enable,
   output comb_enable
@@ -61,6 +61,10 @@ module cic_sync #(
   assign comb_enable    = comb_condition;
 
   reg [2:0] state;
+
+  reg pdm_clk_reg;
+
+  assign pdm_clk = ~pdm_clk_reg;
 
   always @(state) begin
     case(state)
@@ -122,12 +126,12 @@ module cic_sync #(
 
   always @(posedge clk or posedge resetn) begin
     if (resetn | pdm_conndition)
-      pdm_clk <= 1'b1;
+      pdm_clk_reg <= 1'b1;
     else begin
       if (sys_count == pdm_half_ratio)
-        pdm_clk <= 1'b0;
+        pdm_clk_reg <= 1'b0;
       else
-        pdm_clk <= pdm_clk;
+        pdm_clk_reg <= pdm_clk_reg;
     end
   end
 
