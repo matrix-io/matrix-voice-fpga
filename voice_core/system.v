@@ -29,7 +29,7 @@ module system #(
   parameter                  SYS_FREQ_HZ       = 150_000_000                     ,
   parameter                  CLKFX_DIVIDE      = 1                               ,
   parameter                  CLKFX_MULTIPLY    = 3                               ,
-  parameter [          63:0] VERSION           = 64'hBAD2_6032_000A_0001         ,
+  parameter [          63:0] VERSION           = 64'hBAD4_6032_000A_0001         ,
   //Microphone Configuration
   parameter                  OUT_FREQ_HZ       = 16_000                          ,
   parameter                  PDM_FREQ_HZ       = 3_000_000                       , /* this frequency must be multiple of 16000, 22000, 44000, 48000 Hz */
